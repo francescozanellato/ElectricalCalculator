@@ -19,19 +19,14 @@ ElectricalCalculator let you quickly calculate some electrical quantities starti
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-Features:
+# Features:
 
-    Quick Calculations: Perform quick calculations of various electrical quantities based on the rated data of electrical equipment such as transformers, motors, and generators.
-
-    User-Friendly Interface: Easy-to-use graphical interface to input data and view calculations.
-
-    Comprehensive Data Input: Support for inputting detailed rated data for different types of electrical equipment.
-
-    Calculations: Provides calculations and results for electrical parameters such as power, current, voltage, and efficiency. Also calculates the size of a conductor based on the short-circuit current.
-
-    Multi-Device Support: Compatible with various devices and operating systems (Windows, MacOS, Linux).
-
-    Open Source: Distributed under the GNU General Public License, allowing you to modify and redistribute the software.
+ * Quick Calculations: Perform quick calculations of various electrical quantities based on the rated data of electrical equipment such as transformers, motors, and generators.
+ * User-Friendly Interface: Easy-to-use graphical interface to input data and view calculations.
+ * Comprehensive Data Input: Support for inputting detailed rated data for different types of electrical equipment.
+ * Calculations: Provides calculations and results for electrical parameters such as power, current, voltage, and efficiency. Also calculates the size of a conductor based on the short-circuit current.
+ * Multi-Device Support: Compatible with various devices and operating systems (Windows, MacOS, Linux).
+ * Open Source: Distributed under the GNU General Public License, allowing you to modify and redistribute the software.
 
 # Compiling:
 
