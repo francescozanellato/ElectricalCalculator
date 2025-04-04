@@ -32,3 +32,26 @@ Features:
     Multi-Device Support: Compatible with various devices and operating systems (Windows, MacOS, Linux).
 
     Open Source: Distributed under the GNU General Public License, allowing you to modify and redistribute the software.
+
+# Compiling:
+
+Install Qt and QMake:
+
+Ensure that you have Qt and QMake installed on your system. You can download and install Qt from the Qt official website.
+
+Clone the Repository:
+
+git clone https://github.com/francescozanellato/ElectricalCalculator.git
+cd ElectricalCalculator
+
+Generate Makefile using QMake:
+
+qmake
+
+Compile the Project:
+
+make
+
+Run the Application:
+
+./ElectricalCalculator
