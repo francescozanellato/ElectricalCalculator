@@ -42,6 +42,7 @@ Ensure that you have Qt and QMake installed on your system. You can download and
 Clone the Repository:
 
 git clone https://github.com/francescozanellato/ElectricalCalculator.git
+
 cd ElectricalCalculator
 
 Generate Makefile using QMake:
