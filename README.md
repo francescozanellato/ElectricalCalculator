@@ -34,26 +34,26 @@ Install MSYS2, following the instructions at the following link:
 
 https://www.msys2.org/wiki/MSYS2-installation/
 
-Run Mingw64 environment:
+Run MSYS2 (Mingw64 environment):
 
-C:\msys64\mingw64.exe
+    C:\msys64\mingw64.exe
 
-Install Qt package and all the development tools with the following commands inside MSYS2:
+Install Qt package and all the development tools with the following commands inside MSYS2 (Mingw64 environment):
 
-pacman -S mingw-w64-x86_64-qt6
-pacman -S mingw-w64-x86_64-make
-pacman -S git
-pacman -S mingw-w64-x86_64-gcc
+    pacman -S mingw-w64-x86_64-qt6
+    pacman -S mingw-w64-x86_64-make
+    pacman -S git
+    pacman -S mingw-w64-x86_64-gcc
 
 Clone the Repository:
 
-git clone https://github.com/francescozanellato/ElectricalCalculator.git
+    git clone https://github.com/francescozanellato/ElectricalCalculator.git
 
-cd ElectricalCalculator
+    cd ElectricalCalculator
 
 Generate Makefile using QMake:
 
-qmake6
+    qmake6
 
 Compile the Project:
 
@@ -61,18 +61,18 @@ mingw32-make.exe
 
 Run the Application:
 
-./release/ElectricalCalculator
+    ./release/ElectricalCalculator
 
 copy the executable in the "bin" folder (along with the required dll to run the software):
 
-cp ./release/ElectricalCalculator.exe /mingw64/bin/
+    cp ./release/ElectricalCalculator.exe /mingw64/bin/
 
-exit
+    exit
 
 
 In Windows, create the program shortcut on the Desktop, pointing to the following path:
 
-"C:\msys64\mingw64\bin\ElectricalCalculator.exe"
+    "C:\msys64\mingw64\bin\ElectricalCalculator.exe"
 
 Double click the link to open the program.
 
