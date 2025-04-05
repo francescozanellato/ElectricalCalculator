@@ -45,28 +45,20 @@ Install Qt package and all the development tools with the following commands ins
     pacman -S git
     pacman -S mingw-w64-x86_64-gcc
 
-Clone the Repository:
+Clone the Repository, build the project, run and deploy the application:
 
     git clone https://github.com/francescozanellato/ElectricalCalculator.git
 
     cd ElectricalCalculator
 
-Generate Makefile using QMake:
-
     qmake6
-
-Compile the Project:
 
     mingw32-make.exe
 
-Run the Application:
-
     ./release/ElectricalCalculator
 
-copy the executable in the "bin" folder (along with the required dll to run the software):
-
     cp ./release/ElectricalCalculator.exe /mingw64/bin/
-
+    explorer.exe /select,"C:\\msys64\\mingw64\\bin\\ElectricalCalculator.exe"
     exit
 
 
