@@ -57,7 +57,7 @@ Generate Makefile using QMake:
 
 Compile the Project:
 
-mingw32-make.exe
+    mingw32-make.exe
 
 Run the Application:
 
