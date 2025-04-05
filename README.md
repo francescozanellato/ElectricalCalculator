@@ -28,7 +28,7 @@ ElectricalCalculator let you quickly calculate some electrical quantities starti
  * Multi-Device Support: Compatible with various devices and operating systems (Windows, MacOS, Linux).
  * Open Source: Distributed under the GNU General Public License, allowing you to modify and redistribute the software.
 
-# Compiling (Preferred method for Windows):
+# Compiling (recommended method on Windows):
 
 Install MSYS2, following the instructions at the following link:
 
