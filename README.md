@@ -28,7 +28,57 @@ ElectricalCalculator let you quickly calculate some electrical quantities starti
  * Multi-Device Support: Compatible with various devices and operating systems (Windows, MacOS, Linux).
  * Open Source: Distributed under the GNU General Public License, allowing you to modify and redistribute the software.
 
-# Compiling:
+# Compiling (Preferred method for Windows):
+
+Install MSYS2, following the instructions at the following link:
+
+https://www.msys2.org/wiki/MSYS2-installation/
+
+Run Mingw64 environment:
+
+C:\msys64\mingw64.exe
+
+Install Qt package and all the development tools with the following commands inside MSYS2:
+
+pacman -S mingw-w64-x86_64-qt6
+pacman -S mingw-w64-x86_64-make
+pacman -S git
+pacman -S mingw-w64-x86_64-gcc
+
+Clone the Repository:
+
+git clone https://github.com/francescozanellato/ElectricalCalculator.git
+
+cd ElectricalCalculator
+
+Generate Makefile using QMake:
+
+qmake6
+
+Compile the Project:
+
+mingw32-make.exe
+
+Run the Application:
+
+./release/ElectricalCalculator
+
+copy the executable in the "bin" folder (along with the required dll to run the software):
+
+cp ./release/ElectricalCalculator.exe /mingw64/bin/
+
+exit
+
+
+In Windows, create the program shortcut on the Desktop, pointing to the following path:
+
+"C:\msys64\mingw64\bin\ElectricalCalculator.exe"
+
+Double click the link to open the program.
+
+
+
+# Compiling (Alternative for all operating systems):
 
 Install Qt and QMake:
 
