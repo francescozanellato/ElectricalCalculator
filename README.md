@@ -32,7 +32,8 @@ ElectricalCalculator let you quickly calculate some electrical quantities starti
 
 Install Qt and QMake:
 
-Ensure that you have Qt and QMake installed on your system. You can download and install Qt from the Qt official website.
+Ensure that you have Qt and QMake installed on your system. You can download and install Qt from the Qt official website:
+https://www.qt.io/
 
 Clone the Repository:
 
