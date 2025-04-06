@@ -1,5 +1,5 @@
 # ElectricalCalculator
-ElectricalCalculator let you quickly calculate some electrical quantities starting from the rated data of an electrical equipment (Transformer, Motor, Generator)
+ElectricalCalculator lets you quickly calculate some electrical quantities starting from the rated data of an electrical equipment (Transformer, Motor, Generator)
 
     Author: Francesco Paolo Luca Zanellato
     Copyright (C) 2015-2025 Francesco Paolo Luca Zanellato
