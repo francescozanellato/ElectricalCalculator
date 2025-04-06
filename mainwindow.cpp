@@ -22,9 +22,9 @@
 #include <QMessageBox>
 #include <QDesktopServices>
 #include <QClipboard>
-//#define LICENSE "ElectricalCalculator version 1.0.1\n\n© Francesco Zanellato 2024\n\nThis program is freeware;\nit is provided \"AS IT IS\", without any warranty."
+#define LICENSE "ElectricalCalculator version 1.0.1\n\n© Francesco Zanellato 2015-2025\n\nThis program is freeware;\nit is provided \"AS IT IS\", without any warranty."
 //LICENSE text using myCompress:
-#define LICENSE "AAAAi3icJYzBCsIwEAXv+YpHzxJi8eZJRKHn9uRtSVe7EBPZpC39JH/DLzPibWCGuQT2RcVTOFPwc6CSFAtrlhThrLN7Yz5vXJWi5+wTbhQ5/DK0rj0YM0yS8dL0UHqi4l2ZV1I+Gin4q0VGHtGcenQDur7ZYZUypbmA4oYa13nZ7BdEhC/m"
+//#define LICENSE "AAAAi3icJYzBCsIwEAXv+YpHzxJi8eZJRKHn9uRtSVe7EBPZpC39JH/DLzPibWCGuQT2RcVTOFPwc6CSFAtrlhThrLN7Yz5vXJWi5+wTbhQ5/DK0rj0YM0yS8dL0UHqi4l2ZV1I+Gin4q0VGHtGcenQDur7ZYZUypbmA4oYa13nZ7BdEhC/m"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -149,7 +149,8 @@ void MainWindow::showLicenseAndCredits()
     //QMessageBox::information(this,"License", LICENSE);
     //thirdPartyLicense->setApplicationLicenseText(LICENSE);
     //thirdPartyLicense->setApplicationLicenseText(qUncompress(LICENSE));
-    thirdPartyLicense->setApplicationLicenseText(myUncompress(LICENSE));
+    //thirdPartyLicense->setApplicationLicenseText(myUncompress(LICENSE));
+    thirdPartyLicense->setApplicationLicenseText(LICENSE);
     thirdPartyLicense->show();
 }
 
