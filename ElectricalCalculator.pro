@@ -46,7 +46,14 @@ FORMS += \
 
 RC_ICONS = icon.ico
 
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+QMAKE_APPLE_DEVICE_ARCHS = x86_64 x86_64h arm64
+
+CONFIG(debug, debug|release) {
+    DESTDIR = $${PWD}/build/debug
+} else {
+    DESTDIR = $${PWD}/release
+}
+
+COPIES += vbsStartupFile
+vbsStartupFile.files = $$files($${PWD}/*.vbs)
+vbsStartupFile.path = $${PWD}/release
