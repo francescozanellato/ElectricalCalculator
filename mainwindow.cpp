@@ -16,13 +16,13 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-//LICENSE: ElectricalCalculator version 0.0.1
+//LICENSE: ElectricalCalculator version 1.0.1
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include <QDesktopServices>
 #include <QClipboard>
-//#define LICENSE "ElectricalCalculator version 0.0.1\n\n© Francesco Zanellato 2024\n\nThis program is freeware;\nit is provided \"AS IT IS\", without any warranty."
+//#define LICENSE "ElectricalCalculator version 1.0.1\n\n© Francesco Zanellato 2024\n\nThis program is freeware;\nit is provided \"AS IT IS\", without any warranty."
 //LICENSE text using myCompress:
 #define LICENSE "AAAAi3icJYzBCsIwEAXv+YpHzxJi8eZJRKHn9uRtSVe7EBPZpC39JH/DLzPibWCGuQT2RcVTOFPwc6CSFAtrlhThrLN7Yz5vXJWi5+wTbhQ5/DK0rj0YM0yS8dL0UHqi4l2ZV1I+Gin4q0VGHtGcenQDur7ZYZUypbmA4oYa13nZ7BdEhC/m"
 
