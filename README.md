@@ -23,8 +23,6 @@ ElectricalCalculator let you quickly calculate some electrical quantities starti
  * User-Friendly Interface: Easy-to-use graphical interface to input data and view calculations.
  * Comprehensive Data Input: Support for inputting detailed rated data for different types of electrical equipment.
  * Calculations: Provides calculations and results for electrical parameters such as power, current, voltage, and efficiency. Also calculates the size of a conductor based on the short-circuit current.
- * Multi-Device Support: Compatible with various devices and operating systems (Windows, MacOS, Linux).
- * Open Source: Distributed under the GNU General Public License, allowing you to modify and redistribute the software.
 
 ![immagine](https://github.com/user-attachments/assets/28247cf9-9e29-42d8-b2f5-373b7c6e3a21)
 
