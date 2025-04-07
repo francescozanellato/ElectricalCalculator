@@ -74,7 +74,7 @@ In Windows, create the program shortcut on the Desktop, pointing to the followin
 
 Double click the link to open the program.
 
-Warning: if you need to move the program folder in a different location and you obtain the Message "Error saving image!", please remember to change the variable "imagePath" in the configuration file "ElectricalCalculator.txt" so that it points to the correct path (the path indicated in this variable is not created, so it must be existing).
+You can move the "ElectricalCalculator" in any folder you like.
 
 Note: after compiling, the folder "C:\msys64\home\fraz3\ElectricalCalculator" can be removed. You can leave the folder "C:\msys64" for compiling other programs.
 
