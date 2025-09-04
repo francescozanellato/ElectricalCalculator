@@ -28,7 +28,7 @@ Here is the main window, with calculation of the rated currents, short-circuit c
 
 <img width="654" height="824" alt="IMG0002" src="https://github.com/user-attachments/assets/13b5ee14-c2ae-4f0f-b87a-23087f389503" />
 
-Is here a useful Scal calculator for Autocad/Intellicad, etc.:
+Is here a useful Model/Layout/Paper Scale calculator for Autocad/Intellicad, etc.:
 <img width="654" height="824" alt="IMG0003" src="https://github.com/user-attachments/assets/63f6a74f-0650-467c-8697-630fb507f642" />
 
 
