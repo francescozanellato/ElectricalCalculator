@@ -20,7 +20,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-VERSION = 1.0.1
+VERSION = 1.0.2
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 DEFINES += APP_NAME=\\\"ElectricalCalculator\\\"
 QMAKE_TARGET_COPYRIGHT = "\\251 2015-2025 Francesco Zanellato. Freeware provided AS IT IS, without any warranty."
