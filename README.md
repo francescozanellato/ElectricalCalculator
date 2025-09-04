@@ -24,7 +24,13 @@ ElectricalCalculator lets you quickly calculate some electrical quantities start
  * Comprehensive Data Input: Support for inputting detailed rated data for different types of electrical equipment.
  * Calculations: Provides calculations and results for electrical parameters such as power, current, voltage, and efficiency. Also calculates the size of a conductor based on the short-circuit current.
 
-![immagine](https://github.com/user-attachments/assets/28247cf9-9e29-42d8-b2f5-373b7c6e3a21)
+Here is the main window, with calculation of the rated currents, short-circuit currents, circuit-breaker typical rated current and earthing conductor sizing:
+<img width="654" height="824" alt="IMG0002" src="https://github.com/user-attachments/assets/13b5ee14-c2ae-4f0f-b87a-23087f389503" />
+
+Is here a useful Scal calculator for Autocad/Intellicad, etc.:
+<img width="654" height="824" alt="IMG0003" src="https://github.com/user-attachments/assets/63f6a74f-0650-467c-8697-630fb507f642" />
+
+
 
 Enjoy!
 
