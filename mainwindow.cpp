@@ -16,15 +16,12 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-//LICENSE: ElectricalCalculator version 1.0.1
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include <QDesktopServices>
 #include <QClipboard>
-#define LICENSE "ElectricalCalculator version 1.0.1\n\n© Francesco Zanellato 2015-2025\n\nThis program is freeware;\nit is provided \"AS IT IS\", without any warranty."
-//LICENSE text using myCompress:
-//#define LICENSE "AAAAi3icJYzBCsIwEAXv+YpHzxJi8eZJRKHn9uRtSVe7EBPZpC39JH/DLzPibWCGuQT2RcVTOFPwc6CSFAtrlhThrLN7Yz5vXJWi5+wTbhQ5/DK0rj0YM0yS8dL0UHqi4l2ZV1I+Gin4q0VGHtGcenQDur7ZYZUypbmA4oYa13nZ7BdEhC/m"
+#define LICENSE "ElectricalCalculator version 1.0.2\n\n© Francesco Zanellato 2015-2025\n\nThis program is freeware;\nit is provided \"AS IT IS\", without any warranty."
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -34,6 +31,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->setWindowTitle(qApp->applicationName()+" "+QString(APP_VERSION));
     ui->ViewportScale->setCompleter(nullptr);
+
+    ui->PlotScale_measure->setCompleter(nullptr);
+    ui->PlotScale_units->setCompleter(nullptr);
+
     ui->CBSpareMargin->setCompleter(nullptr);
     ui->ratedVoltage->setCompleter(nullptr);
     ui->ratedPower->setCompleter(nullptr);
@@ -56,6 +57,13 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->LayoutUnit, SIGNAL(currentIndexChanged(int)), this, SLOT(calculateActualScale()));
     connect(ui->ModelUnit, SIGNAL(currentIndexChanged(int)), this, SLOT(calculateActualScale()));
     connect(ui->ActualScale, SIGNAL(returnPressed()), this, SLOT(calculateActualScale()));
+
+    connect(ui->PlotScale_measure->lineEdit(), SIGNAL(returnPressed()), this, SLOT(calculateActualScale()));
+    connect(ui->PlotScale_measure, SIGNAL(editTextChanged(QString)), this, SLOT(calculateActualScale()));
+    connect(ui->PlotScale_units->lineEdit(), SIGNAL(returnPressed()), this, SLOT(calculateActualScale()));
+    connect(ui->PlotScale_units, SIGNAL(editTextChanged(QString)), this, SLOT(calculateActualScale()));
+    connect(ui->PlotScale_mm_or_inches, SIGNAL(currentIndexChanged(int)), this, SLOT(calculateActualScale()));
+
     //CONNECT kVA ACTIONS
     connect(ui->numberOfPhases, SIGNAL(currentIndexChanged(int)), this, SLOT(calculatekVA()));
     connect(ui->ratedVoltage, SIGNAL(editTextChanged(QString)), this, SLOT(calculatekVA()));
@@ -91,12 +99,13 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->actionEditDefaultSettings, SIGNAL(triggered()), this, SLOT(editDefaultSettings()));
     connect(ui->CBRating, SIGNAL(currentTextChanged(QString)), this, SLOT(updateCBRatingColour()));
     //FILL UI
-    textEditViewportExplanation = "Viewport custom scale is %VP_SCALE%, so:\n"
-                                  "%VP_SCALE% %LAYOUT_UNIT% (in layout units) : 1 %MODEL_UNIT% (in model units).\n"
+    textEditViewportExplanation = "Viewport Custom Scale is %VP_SCALE%.\n"
+                                  "Viewport Custom Scale * plot scaling factor is %VP_WITH_SCALING%.\n"
+                                  "%VP_WITH_SCALING% %LAYOUT_UNIT% (in layout units) : 1 %MODEL_UNIT% (in model units).\n"
                                   "Therefore:\n"
-                                  "%VP_SCALE% %LAYOUT_UNIT% : %SECOND_NUMBER% %LAYOUT_UNIT%\n"
+                                  "%VP_WITH_SCALING% %LAYOUT_UNIT% : %SECOND_NUMBER% %LAYOUT_UNIT%\n"
                                   "Dividing both numbers by the lowest (%LOWEST_NUMBER%):\n"
-                                  "%VP_SCALE%/%LOWEST_NUMBER% %LAYOUT_UNIT% : %SECOND_NUMBER%/%LOWEST_NUMBER% %MODEL_UNIT%\n"
+                                  "%VP_WITH_SCALING%/%LOWEST_NUMBER% %LAYOUT_UNIT% : %SECOND_NUMBER%/%LOWEST_NUMBER% %MODEL_UNIT%\n"
                                   "The resulting scale is %ACTUAL_SCALE%";
     //STARTUP
     ui->CBRating->addItems(CBRatingList);
@@ -267,7 +276,16 @@ void MainWindow::goTokVAExample()
 
 void MainWindow::calculateActualScale()
 {
-    double myViewportScale = QVariant(ui->ViewportScale->currentText()).toDouble();
+    double myPlotScalingFactor = QVariant(ui->PlotScale_measure->currentText()).toDouble() / QVariant(ui->PlotScale_units->currentText()).toDouble() * (ui->PlotScale_mm_or_inches->currentText()=="mm"? 1 : 0.0254);
+    //double myLayoutScalingFactor = myViewportScale*myPlotScalingFactor;
+
+
+    double myViewportScale = QVariant(ui->ViewportScale->currentText()).toDouble()*myPlotScalingFactor;
+    ui->PlotScalingFactor->setText(ui->PlotScale_measure->currentText() + (ui->PlotScale_mm_or_inches->currentText()=="mm"? "/" : "*0.0254/") +
+                                   ui->PlotScale_units->currentText() + " = " + QVariant(myPlotScalingFactor).toString() +
+                                   " Therefore the actual Viewport Custom Scale is: " + (QString::number(myViewportScale) + " in the layout"));
+
+
     QString myLayoutUnit = ui->LayoutUnit->currentText();
     double myLayoutUnitNumber;
     if (myLayoutUnit == "mm") myLayoutUnitNumber = 0.001;
@@ -298,7 +316,8 @@ void MainWindow::calculateActualScale()
     //if (ratioNumber > 1) {numerator = ratioNumber; denominator = 1.0;}
     //else if (ratioNumber < 1) {numerator = 1.0; denominator = 1.0 / ratioNumber;}
     //else {numerator = 0.0; denominator = 0.0;}
-    ui->ScaleText->setText(ui->ViewportScale->currentText()+" "+myLayoutUnit+" (in the layout) : 1 " + myModelUnit + " (in the model)");
+    // ui->ScaleText->setText(ui->ViewportScale->currentText()+" "+myLayoutUnit+" (in the layout) : 1 " + myModelUnit + " (in the model)");
+    ui->ScaleText->setText(QString::number(myViewportScale)+" "+myLayoutUnit+" (in the layout) : 1 " + myModelUnit + " (in the model)");
     double isNumeratorInteger = QString::number(numerator).toDouble()-QString::number(numerator,'F',0).toDouble();;
     double isDenominatorInteger = QString::number(denominator).toDouble()-QString::number(denominator,'F',0).toDouble();
     if (isNumeratorInteger!=0 || isDenominatorInteger!=0)
@@ -316,7 +335,8 @@ void MainWindow::calculateActualScale()
     QString CompleteExplanation = textEditViewportExplanation;
     ui->plainTextEdit->setPlainText(CompleteExplanation.replace("%VP_SCALE%",ui->ViewportScale->currentText()).replace("%LAYOUT_UNIT%",myLayoutUnit)
                                         .replace("%MODEL_UNIT%",myModelUnit).replace("%SECOND_NUMBER%",QString::number(scaleFactor))
-                                        .replace("%LOWEST_NUMBER%",QString::number(lowest_number)).replace("%ACTUAL_SCALE%",ui->ActualScale->text()));
+                                        .replace("%LOWEST_NUMBER%",QString::number(lowest_number)).replace("%ACTUAL_SCALE%",ui->ActualScale->text())
+                                        .replace("%VP_WITH_SCALING%",QString::number(myViewportScale)));
 }
 void MainWindow::calculateEarthingConductorSizing()
 {
