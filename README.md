@@ -1,5 +1,6 @@
 # ElectricalCalculator
-ElectricalCalculator lets you quickly calculate some electrical quantities starting from the rated data of an electrical equipment (Transformer, Motor, Generator)
+ElectricalCalculator lets you quickly calculate some electrical quantities starting from the rated data of an electrical equipment (Transformer, Motor, Generator).
+ElectricalCalculator also calculates the CAD Viewport scale for Autocad or Intellicad drawings.
 
     Author: Francesco Paolo Luca Zanellato
     Copyright (C) 2015-2025 Francesco Paolo Luca Zanellato
