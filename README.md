@@ -23,13 +23,15 @@ ElectricalCalculator lets you quickly calculate some electrical quantities start
  * User-Friendly Interface: Easy-to-use graphical interface to input data and view calculations.
  * Comprehensive Data Input: Support for inputting detailed rated data for different types of electrical equipment.
  * Calculations: Provides calculations and results for electrical parameters such as power, current, voltage, and efficiency. Also calculates the size of a conductor based on the short-circuit current.
+ * CAD Viewport casle calculation: (Autocad or Intellicad) easy calculates the actual scale of the viewport in the laytou and on the printed paper.
 
 Here is the main window, with calculation of the rated currents, short-circuit currents, circuit-breaker typical rated current and earthing conductor sizing:
 
 <img width="654" height="824" alt="IMG0002" src="https://github.com/user-attachments/assets/13b5ee14-c2ae-4f0f-b87a-23087f389503" />
 
-Is here a useful Model/Layout/Paper Scale calculator for Autocad/Intellicad, etc.:
-<img width="654" height="824" alt="IMG0003" src="https://github.com/user-attachments/assets/63f6a74f-0650-467c-8697-630fb507f642" />
+Here is a useful Model/Layout/Paper Viewport Scale calculator for Autocad and Intellicad CAD software:
+<img width="654" height="824" alt="IMG0006" src="https://github.com/user-attachments/assets/557c3c29-4eea-43c3-8406-8bb9e8954419" />
+
 
 
 
