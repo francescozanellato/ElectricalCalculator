@@ -229,7 +229,7 @@
            </widget>
           </item>
           <item row="3" column="5">
-           <widget class="QLabel" name="label_65">
+           <widget class="QLabel" name="label_PlotScale_units">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -2458,22 +2458,28 @@ I = 10 / 0.4 / sqrt(3) / 0.9 / 0.8 = 20.047 A</string>
   <tabstop>ViewportScale</tabstop>
   <tabstop>LayoutUnit</tabstop>
   <tabstop>ModelUnit</tabstop>
+  <tabstop>PlotScale_measure</tabstop>
+  <tabstop>PlotScale_mm_or_inches</tabstop>
+  <tabstop>PlotScale_units</tabstop>
   <tabstop>Calculate</tabstop>
   <tabstop>ScaleText</tabstop>
   <tabstop>ActualScale</tabstop>
   <tabstop>Explanation</tabstop>
+  <tabstop>plainTextEdit</tabstop>
   <tabstop>numberOfPhases</tabstop>
   <tabstop>ratedVoltage</tabstop>
   <tabstop>ratedPower</tabstop>
   <tabstop>fullLoadEfficiency</tabstop>
   <tabstop>powerFactor</tabstop>
   <tabstop>shortCircuitImpedance</tabstop>
-  <tabstop>Calculation_kVA</tabstop>
+  <tabstop>CBSpareMargin</tabstop>
   <tabstop>ratedVoltageUnit</tabstop>
   <tabstop>ratedPowerUnit</tabstop>
   <tabstop>efficiencyUnit</tabstop>
   <tabstop>powerFactorUnit</tabstop>
   <tabstop>shortCircuitImpedanceUnit</tabstop>
+  <tabstop>CBSpareMarginUnit</tabstop>
+  <tabstop>Calculation_kVA</tabstop>
   <tabstop>ratedApparentPower</tabstop>
   <tabstop>ratedActivePower</tabstop>
   <tabstop>ratedReactivePower</tabstop>
@@ -2482,6 +2488,9 @@ I = 10 / 0.4 / sqrt(3) / 0.9 / 0.8 = 20.047 A</string>
   <tabstop>ratedApparentPowerUnit</tabstop>
   <tabstop>ratedActivePowerUnit</tabstop>
   <tabstop>ratedReactivePowerUnit</tabstop>
+  <tabstop>CBRating</tabstop>
+  <tabstop>CopyDown</tabstop>
+  <tabstop>copySizingFormula</tabstop>
   <tabstop>earthFaultCurrent_kA</tabstop>
   <tabstop>splitFactor</tabstop>
   <tabstop>faultClearingTime_s</tabstop>
