@@ -304,7 +304,7 @@ void MainWindow::calculateActualScale()
     double myPlotScalingFactor = QVariant(ui->PlotScale_measure->currentText()).toDouble() / QVariant(ui->PlotScale_units->currentText()).toDouble() * mm_or_inch_conversion;
     //double myLayoutScalingFactor = myViewportScale*myPlotScalingFactor;
 
-    ui->label_PlotScale_units->setText("units: ("+ui->LayoutUnit->currentText() + ")");
+    ui->label_PlotScale_units->setText("units ("+ui->LayoutUnit->currentText() + ")");
 
     double myViewportScale = QVariant(ui->ViewportScale->currentText()).toDouble()*myPlotScalingFactor;
     ui->PlotScalingFactor->setText(ui->PlotScale_measure->currentText() + (ui->PlotScale_mm_or_inches->currentText()=="mm"? "/" : "*0.0254m/") +
@@ -505,5 +505,6 @@ void MainWindow::updateCBRatingColour()
     if (ui->CBRating->currentText().toDouble()>3150) ui->CBRating->setStyleSheet("color: red;");
     else ui->CBRating->setStyleSheet("color: ;");
 }
+
 
 
