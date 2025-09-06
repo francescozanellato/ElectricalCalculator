@@ -30,6 +30,7 @@ Here is the main window, with calculation of the rated currents, short-circuit c
 <img width="654" height="824" alt="IMG0002" src="https://github.com/user-attachments/assets/13b5ee14-c2ae-4f0f-b87a-23087f389503" />
 
 <br/>
+
 Here is a useful Model/Layout/Paper Viewport Scale calculator for Autocad and Intellicad CAD software:
 
 <img width="654" height="824" alt="IMG0006" src="https://github.com/user-attachments/assets/557c3c29-4eea-43c3-8406-8bb9e8954419" />
