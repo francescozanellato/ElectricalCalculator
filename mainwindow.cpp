@@ -276,14 +276,7 @@ void MainWindow::goTokVAExample()
 
 void MainWindow::calculateActualScale()
 {
-    double myPlotScalingFactor = QVariant(ui->PlotScale_measure->currentText()).toDouble() / QVariant(ui->PlotScale_units->currentText()).toDouble() * (ui->PlotScale_mm_or_inches->currentText()=="mm"? 1 : 0.0254);
-    //double myLayoutScalingFactor = myViewportScale*myPlotScalingFactor;
 
-
-    double myViewportScale = QVariant(ui->ViewportScale->currentText()).toDouble()*myPlotScalingFactor;
-    ui->PlotScalingFactor->setText(ui->PlotScale_measure->currentText() + (ui->PlotScale_mm_or_inches->currentText()=="mm"? "/" : "*0.0254/") +
-                                   ui->PlotScale_units->currentText() + " = " + QVariant(myPlotScalingFactor).toString() +
-                                   " Therefore the actual Viewport Custom Scale is: " + (QString::number(myViewportScale) + " in the layout"));
 
 
     QString myLayoutUnit = ui->LayoutUnit->currentText();
@@ -307,6 +300,17 @@ void MainWindow::calculateActualScale()
     else if (myModelUnit == "km") myModelUnitNumber = 1000.0000;
     else myModelUnitNumber = 1;
 
+    double mm_or_inch_conversion = (ui->PlotScale_mm_or_inches->currentText()=="mm"? 1 : 0.0254/myLayoutUnitNumber);
+    double myPlotScalingFactor = QVariant(ui->PlotScale_measure->currentText()).toDouble() / QVariant(ui->PlotScale_units->currentText()).toDouble() * mm_or_inch_conversion;
+    //double myLayoutScalingFactor = myViewportScale*myPlotScalingFactor;
+
+    ui->label_PlotScale_units->setText("units: "+ui->LayoutUnit->currentText());
+
+    double myViewportScale = QVariant(ui->ViewportScale->currentText()).toDouble()*myPlotScalingFactor;
+    ui->PlotScalingFactor->setText(ui->PlotScale_measure->currentText() + (ui->PlotScale_mm_or_inches->currentText()=="mm"? "/" : "*0.0254m/") +
+                                   ui->PlotScale_units->currentText() + ui->LayoutUnit->currentText() + "=" + QString::number(myPlotScalingFactor) +
+                                   " So, the actual Viewport Custom Scale is: " + (QString::number(myViewportScale) + " in the layout"));
+
     //CALCULATION:
     //double ratioNumber = myViewportScale * myLayoutUnitNumber / myModelUnitNumber;
     double scaleFactor = myModelUnitNumber/myLayoutUnitNumber;
@@ -318,9 +322,15 @@ void MainWindow::calculateActualScale()
     //else {numerator = 0.0; denominator = 0.0;}
     // ui->ScaleText->setText(ui->ViewportScale->currentText()+" "+myLayoutUnit+" (in the layout) : 1 " + myModelUnit + " (in the model)");
     ui->ScaleText->setText(QString::number(myViewportScale)+" "+myLayoutUnit+" (in the layout) : 1 " + myModelUnit + " (in the model)");
-    double isNumeratorInteger = QString::number(numerator).toDouble()-QString::number(numerator,'F',0).toDouble();;
-    double isDenominatorInteger = QString::number(denominator).toDouble()-QString::number(denominator,'F',0).toDouble();
-    if (isNumeratorInteger!=0 || isDenominatorInteger!=0)
+    //double isNumeratorInteger = QString::number(numerator).toDouble()-QString::number(numerator,'F',0).toDouble();
+    bool isNumeratorInteger = std::abs(numerator - std::round(numerator)) < 1e-10;
+    // double isNumeratorInteger = QVariant(numerator).toInt()-numerator;
+    // double isDenominatorInteger = QString::number(denominator).toDouble()-QString::number(denominator,'F',0).toDouble();
+    //bool isDenominatorInteger = denominator-floor(denominator);
+    bool isDenominatorInteger = std::abs(denominator - std::round(denominator)) < 1e-10;
+    //double isDenominatorInteger = QVariant(denominator).toInt()-numerator;
+    // if (isNumeratorInteger!=0 || isDenominatorInteger!=0)
+    if (!isNumeratorInteger || !isDenominatorInteger)
     { ui->ActualScale->setStyleSheet("color: red;");
         ui->ActualScale->setText(QString::number(numerator,'F',0) + ":" + QString::number(denominator,'F',0) + " (Approximate scale)");
     }
