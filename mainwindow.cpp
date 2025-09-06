@@ -309,7 +309,7 @@ void MainWindow::calculateActualScale()
     double myViewportScale = QVariant(ui->ViewportScale->currentText()).toDouble()*myPlotScalingFactor;
     ui->PlotScalingFactor->setText(ui->PlotScale_measure->currentText() + (ui->PlotScale_mm_or_inches->currentText()=="mm"? "/" : "*0.0254m/") +
                                    ui->PlotScale_units->currentText() + ui->LayoutUnit->currentText() + "=" + QString::number(myPlotScalingFactor) +
-                                   " So, the actual Viewport Custom Scale is: " + (QString::number(myViewportScale) + " in the layout"));
+                                   "; so, the actual Viewport Custom Scale is: " + (QString::number(myViewportScale) + " in the layout"));
 
     //CALCULATION:
     //double ratioNumber = myViewportScale * myLayoutUnitNumber / myModelUnitNumber;
@@ -505,3 +505,4 @@ void MainWindow::updateCBRatingColour()
     if (ui->CBRating->currentText().toDouble()>3150) ui->CBRating->setStyleSheet("color: red;");
     else ui->CBRating->setStyleSheet("color: ;");
 }
+
