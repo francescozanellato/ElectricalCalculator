@@ -1,6 +1,6 @@
 /*
  * Author: Francesco Paolo Luca Zanellato
- * Copyright (C) 2015-2025 Francesco Paolo Luca Zanellato
+ * Copyright (C) 2015-2026 Francesco Paolo Luca Zanellato
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
 #include <QMessageBox>
 #include <QDesktopServices>
 #include <QClipboard>
-#define LICENSE "ElectricalCalculator version 1.0.2\n\n© Francesco Zanellato 2015-2025\n\nThis program is freeware;\nit is provided \"AS IT IS\", without any warranty."
+#define LICENSE "ElectricalCalculator version 1.0.3\n\n© Francesco Zanellato 2015-2025\n\nThis program is freeware;\nit is provided \"AS IT IS\", without any warranty."
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -36,6 +36,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->PlotScale_units->setCompleter(nullptr);
 
     ui->CBSpareMargin->setCompleter(nullptr);
+    ui->X_over_R_ratio->setCompleter(nullptr);
     ui->ratedVoltage->setCompleter(nullptr);
     ui->ratedPower->setCompleter(nullptr);
     ui->fullLoadEfficiency->setCompleter(nullptr);
@@ -77,6 +78,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->shortCircuitImpedance, SIGNAL(editTextChanged(QString)), this, SLOT(calculatekVA()));
     connect(ui->shortCircuitImpedanceUnit, SIGNAL(currentIndexChanged(int)), this, SLOT(calculatekVA()));
     connect(ui->CBSpareMargin, SIGNAL(editTextChanged(QString)), this, SLOT(calculatekVA()));
+    connect(ui->CBSpareMargin, SIGNAL(currentIndexChanged(int)), this, SLOT(calculatekVA()));
+    connect(ui->X_over_R_ratio, SIGNAL(editTextChanged(QString)), this, SLOT(calculatekVA()));
+    connect(ui->X_over_R_ratio, SIGNAL(currentIndexChanged(int)), this, SLOT(calculatekVA()));
     connect(ui->CBSpareMarginUnit, SIGNAL(currentIndexChanged(int)), this, SLOT(calculatekVA()));
     connect(ui->ratedApparentPowerUnit, SIGNAL(currentIndexChanged(int)), this, SLOT(calculatekVA()));
     connect(ui->ratedActivePowerUnit, SIGNAL(currentIndexChanged(int)), this, SLOT(calculatekVA()));
@@ -150,7 +154,9 @@ QString MainWindow::myUncompress(QString compressedHexString)
 
 void MainWindow::aboutQT()
 {
-    QMessageBox::aboutQt(this, "About QT");
+    //QMessageBox::aboutQt(this, "About QT");
+    QMessageBox msgBox(this);
+    msgBox.aboutQt(this, "About QT");
 }
 
 void MainWindow::showLicenseAndCredits()
@@ -182,6 +188,7 @@ void MainWindow::loadDefaultSettings()
     ui->shortCircuitImpedanceUnit->setCurrentText(settings->value("shortCircuitImpedanceUnit","%").toString());
     ui->earthFaultCurrent_kA->setText(settings->value("earthFaultCurrent_kA",25).toString());
     ui->CBSpareMargin->setCurrentText(settings->value("CBSpareMargin_A",20).toString());
+    ui->X_over_R_ratio->setCurrentText(settings->value("X_over_R_ratio",20).toString());
     ui->CBSpareMarginUnit->setCurrentText(settings->value("CBSpareMarginUnit","%").toString());
     settings->setValue("CBSpareMarginUnit",ui->CBSpareMarginUnit->currentText());
     calculationIsActive = true;
@@ -210,6 +217,7 @@ void MainWindow::saveDefaultSettings()
     settings->setValue("shortCircuitImpedanceUnit",ui->shortCircuitImpedanceUnit->currentText());
     settings->setValue("CBSpareMargin_A",ui->CBSpareMargin->currentText());
     settings->setValue("CBSpareMarginUnit",ui->CBSpareMarginUnit->currentText());
+    settings->setValue("X_over_R_ratio",ui->X_over_R_ratio->currentText());
     settings->setValue("earthFaultCurrent_kA",ui->earthFaultCurrent_kA->text());
 
     settings->setValue("Calculation/ratedApparentPower",ui->ratedApparentPower->text());
@@ -222,6 +230,7 @@ void MainWindow::saveDefaultSettings()
     settings->setValue("Calculation/CBRating_A",ui->CBRating->currentText());
     settings->setValue("Calculation/shortCircuitContribution",ui->shortCircuitContribution->text());
     settings->setValue("Calculation/shortCircuitContributionUnit",ui->shortCircuitContributionUnit->text());
+    settings->setValue("Calculation/peakShortCircuitContribution",ui->peakShortCircuitContribution->text());
 
     settings->setValue("Earthing_Conductor_Sizing/splitFactor",ui->splitFactor->text());
     settings->setValue("Earthing_Conductor_Sizing/faultClearingTime_s",ui->faultClearingTime_s->text());
@@ -395,7 +404,9 @@ void MainWindow::calculatekVA()
     double _shortCircuitImpedance = ui->shortCircuitImpedance->currentText().toDouble();
     QString _shortCircuitImpedanceUnit = ui->shortCircuitImpedanceUnit->currentText();
     double _ratedCurrent;
+    double _X_over_R_ratio = ui->X_over_R_ratio->currentText().toDouble();
     double _shortCircuitCurrentContribution;
+    double _peakShortCircuitCurrentContribution;
 
     //CALCULATION
     if (_ratedPowerUnit == "MW" || _ratedPowerUnit == "MVA" || _ratedPowerUnit == "Mvar") _ratedPower = _ratedPower * 1000.0;
@@ -422,6 +433,7 @@ void MainWindow::calculatekVA()
     _ratedCurrent = _ratedApparentPower/_ratedVoltage/_voltagePhaseFactor;
     if (_shortCircuitImpedanceUnit == "%") _shortCircuitImpedance = _shortCircuitImpedance / 100.0;
     _shortCircuitCurrentContribution = _ratedCurrent / _shortCircuitImpedance / 1000.0;
+    _peakShortCircuitCurrentContribution = (1.02+0.98*exp(-3.0/_X_over_R_ratio))*sqrt(2.0)*_shortCircuitCurrentContribution;
 
     //UPDATE WINDOW FORM
     if (((_ratedPowerUnit == "kvar" || _ratedPowerUnit == "Mvar") && _powerFactor == 1.0) ||
@@ -433,6 +445,7 @@ void MainWindow::calculatekVA()
         ui->ratedReactivePower->setText("-");
         ui->ratedCurrent_A->setText("-");
         ui->shortCircuitContribution->setText("-");
+        ui->peakShortCircuitContribution->setText("-");
         return;
     }
     else {
@@ -440,6 +453,8 @@ void MainWindow::calculatekVA()
         ui->powerFactor->setStyleSheet("color: green;");
     }
     if (_powerFactor > 1.0 || _powerFactor < 0.0 || qIsInf(_powerFactor) || qIsNaN(_powerFactor)) ui->powerFactor->setStyleSheet("color: red;");
+    if (_X_over_R_ratio <= 0.0 || _X_over_R_ratio > 100.0) ui->X_over_R_ratio->setStyleSheet("color: orange;");
+    else ui->X_over_R_ratio->setStyleSheet("color: green;");
     QString _ratedApparentPowerUnit = ui->ratedApparentPowerUnit->currentText();
     if (_ratedApparentPowerUnit == "MVA")
         ui->ratedApparentPower->setText(QString::number(_ratedApparentPower/1000.0, 'G', 9));
@@ -453,8 +468,8 @@ void MainWindow::calculatekVA()
         ui->ratedReactivePower->setText(QString::number(_ratedReactivePower/1000.0, 'G', 9));
     else ui->ratedReactivePower->setText(QString::number(_ratedReactivePower, 'G', 9));
     ui->ratedCurrent_A->setText(QString::number(_ratedCurrent, 'G', 6));
-    //ui->shortCircuitContribution->setText(QString::number(_shortCircuitCurrentContribution, 'G', 7));
     ui->shortCircuitContribution->setText(QString::number(_shortCircuitCurrentContribution, 'f', 4));
+    ui->peakShortCircuitContribution->setText(QString::number(_peakShortCircuitCurrentContribution, 'f', 4));
     if (_fullLoadEfficiency > 1.0 || _fullLoadEfficiency <= 0.0 || qIsInf(_fullLoadEfficiency) || qIsNaN(_fullLoadEfficiency)) ui->fullLoadEfficiency->setStyleSheet("color: red;");
     else ui->fullLoadEfficiency->setStyleSheet("color: green;");
     if (_ratedActivePower > 1.0E10 || _ratedActivePower < 0.0 || qIsInf(_ratedActivePower) || qIsNaN(_ratedActivePower)) ui->ratedActivePower->setStyleSheet("color: red;");
@@ -471,9 +486,13 @@ void MainWindow::calculatekVA()
     else ui->ratedPower->setStyleSheet("color: green;");
     if (_shortCircuitCurrentContribution > 1.0E6 || _shortCircuitCurrentContribution <= 0.0 || qIsInf(_shortCircuitCurrentContribution) || qIsNaN(_shortCircuitCurrentContribution))
     { ui->shortCircuitImpedance->setStyleSheet("color: red;");
-        ui->shortCircuitContribution->setStyleSheet("color: red;");}
+        ui->shortCircuitContribution->setStyleSheet("color: red;");
+        ui->peakShortCircuitContribution->setStyleSheet("color: red;");
+    }
     else { ui->shortCircuitImpedance->setStyleSheet("color: green;");
-        ui->shortCircuitContribution->setStyleSheet("color: green;");}
+        ui->shortCircuitContribution->setStyleSheet("color: green;");
+        ui->peakShortCircuitContribution->setStyleSheet("color: green;");
+    }
 
     if (ui->CBSpareMargin->currentText().toDouble()<0.0 || (ui->CBSpareMarginUnit->currentText()=="p.u." && ui->CBSpareMargin->currentText().toDouble()>0.5))
         ui->CBSpareMargin->setStyleSheet("color: red;");
@@ -505,6 +524,3 @@ void MainWindow::updateCBRatingColour()
     if (ui->CBRating->currentText().toDouble()>3150) ui->CBRating->setStyleSheet("color: red;");
     else ui->CBRating->setStyleSheet("color: ;");
 }
-
-
-
