@@ -21,7 +21,7 @@
 #include <QMessageBox>
 #include <QDesktopServices>
 #include <QClipboard>
-#define LICENSE "ElectricalCalculator version 1.0.3\n\n© Francesco Zanellato 2015-2025\n\nThis program is freeware;\nit is provided \"AS IT IS\", without any warranty."
+#define LICENSE "ElectricalCalculator version 1.0.3\n\n© Francesco Zanellato 2015-2026\n\nThis program is freeware;\nit is provided \"AS IT IS\", without any warranty."
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
