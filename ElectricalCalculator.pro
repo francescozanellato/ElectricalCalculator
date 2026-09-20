@@ -23,7 +23,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 VERSION = 1.0.3
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 DEFINES += APP_NAME=\\\"ElectricalCalculator\\\"
-QMAKE_TARGET_COPYRIGHT = "\\251 2015-2025 Francesco Zanellato. Freeware provided AS IT IS, without any warranty."
+QMAKE_TARGET_COPYRIGHT = "\\251 2015-2026 Francesco Zanellato. Freeware provided AS IT IS, without any warranty."
 
 CONFIG += c++17
 
