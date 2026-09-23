@@ -1,9 +1,8 @@
-# ElectricalCalculator
-ElectricalCalculator lets you quickly calculate some electrical quantities starting from the rated data of an electrical equipment (Transformer, Motor, Generator).
-ElectricalCalculator also calculates the CAD Viewport scale for Autocad or Intellicad drawings.
+# PasteOnlyText
+PasteOnlyText lets you perform many actions on the text/content/imges copied in your clipboard, like conversion to "All UPPERCASE", "all lower case" and fast image cropping, conversion and saving.
 
     Author: Francesco Paolo Luca Zanellato
-    Copyright (C) 2015-2025 Francesco Paolo Luca Zanellato
+    Copyright (C) 2015-2026 Francesco Paolo Luca Zanellato
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -18,28 +17,112 @@ ElectricalCalculator also calculates the CAD Viewport scale for Autocad or Intel
     You should have received a copy of the GNU General Public License
     along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-# Features:
+# Features
 
- * Quick Calculations: Perform quick calculations of various electrical quantities based on the rated data of electrical equipment such as transformers, motors, and generators.
- * User-Friendly Interface: Easy-to-use graphical interface to input data and view calculations.
- * Comprehensive Data Input: Support for inputting detailed rated data for different types of electrical equipment.
- * Calculations: Provides calculations and results for electrical parameters such as power, current, voltage, and efficiency. Also calculates the size of a conductor based on the short-circuit current.
- * CAD Viewport scale calculation for Autocad or Intellicad drawings: easy calculates the actual scale of the viewport in the layout and on the printed paper.
+Explore the text of your clipboard:
 
-Here is the main window, with calculation of the rated currents, short-circuit currents, circuit-breaker typical rated current and earthing conductor sizing:
+![immagine](https://github.com/user-attachments/assets/987feecd-0385-4f5f-8cb5-12d0448bfb54)
 
-<img width="654" height="824" alt="IMG0002" src="https://github.com/user-attachments/assets/13b5ee14-c2ae-4f0f-b87a-23087f389503" />
+Perform many actions on text (like all UPPERCASE or all lowercase) and images:
 
-<br/>
+![Senza titolo2](https://github.com/user-attachments/assets/0c7c6287-ed51-4361-93d2-dc7027b2aa59)
 
-&nbsp;
+Crop an image in memory and save it with a single click:
 
-Here is a useful Model/Layout/Paper Viewport Scale calculator for Autocad and Intellicad CAD software:
-
-<img width="654" height="824" alt="Viewport_Scale_calculator" src="https://github.com/user-attachments/assets/a83da20f-0e28-4824-ae5e-e0cb209ebf8f" />
+![immagine](https://github.com/user-attachments/assets/627b76cb-9c35-43b3-b364-9c3c51c69fde)
 
 
-Enjoy!
+The PasteOnlyText project is a tool designed to perform various actions on the text or content that is copied to your clipboard. Here are some key features and functionalities:
+
+    Clipboard Management: It allows you to manage and manipulate the text content within your clipboard, making it easier to work with copied data.
+
+    Text Processing: You can perform several text processing actions such as trimming, formatting, and converting text to different cases.
+
+    Automation: The project can automate repetitive tasks involving text content, saving time and effort.
+
+    Integration: It integrates seamlessly with other applications and tools, enabling efficient text handling across different platforms.
+
+The project is primarily written in C++ and utilizes QMake for building and project management. Its user interface and functionalities are designed to enhance productivity when dealing with clipboard text content.
+
+The main.cpp file for the PasteOnlyText project includes a command-line option to run the application in a non-interactive mode for progressive pasting to the clipboard. Here are the command-line options:
+
+    -progressive: Enables non-interactive mode for progressive pasting to the clipboard.
+        When this option is used, the application will read the ProgressiveText setting from the PasteOnlyText.cfg configuration file.
+        It will paste the next item from the ProgressiveText list to the clipboard.
+        If the ProgressiveText setting is empty, a default list (Example1;;Example2;;Example3) will be created in the configuration file.
+        The imageNumber setting in the configuration file is used to keep track of the current index for progressive pasting.
+
+Example Usage (from commandline/bash environment):
+
+    ./PasteOnlyText -progressive
+
+This option allows the PasteOnlyText application to automate the process of pasting predefined text snippets from a list to the clipboard in a sequential manner.
+
+By modifying the PasteOnlyText.cfg file (located in the same folder of the executable file), you can set up your own text snippets and configure other options to enhance your clipboard management and automation experience.
+
+# Works with AutoHotKey v2
+You can install AutoHotKey v2 (https://www.autohotkey.com/) and configure a keyboard shortcut to open PasteOnlyText, using the following script in AutoHotKey (shortcut WIN+CTRL+ALT+C):
+
+```
+ ^#!c::
+{
+if WinExist("PasteOnlyText")
+{
+    WinActivate()
+    Return
+}
+else
+{
+    Run("C:\PortableApps\PasteOnlyText\PasteOnlyText.exe")
+    WinWait("PasteOnlyText")
+    WinActivate()
+    Return
+}
+```
+You can automatically insert some favourite texts in the clipboard with the following AutoHotKey script (bound to shortcut WIN+CTRL+C):
+
+```
+^#c::
+{
+Run "C:\PortableApps\\PasteOnlyText\PasteOnlyText.exe -progressive"
+Return
+}
+```
+
+The favourite texts can be configured in the configuration file "C:\PortableApps\\PasteOnlyText\PasteOnlyText.txt", changing the following variable:
+
+```
+ProgressiveText="First text;;Second text"
+```
+
+The texts are separated, in the above example, with ";;" and each time you call "PasteOnlyText.exe -progressive", the next text will be put in the clipboard (no user interaction is needed).
+
+Automatically paste your favourite text with the following AutoHotKey script (bound to shortcut WIN+CTRL+V):
+
+```
+#^v::
+{
+RunWait("C:\PortableApps\fraz\FrazannaSoft\PasteOnlyText.exe -progressive")
+SendInput("^v")
+Return
+```
+
+# Configuration
+
+PasteOnlyText allows you to configure various options through the `PasteOnlyText.cfg` configuration file. This file lets you customize different settings to tailor the application's behavior to your needs.
+
+Example Configuration
+
+```ini
+[ProgressiveText]
+# List of text snippets for progressive pasting
+textList = Example1;;Example2;;Example3
+
+[General]
+# Index for progressive pasting
+imageNumber = 0
+```
+
 
 # Compiling (recommended method on Windows):
 
@@ -58,52 +141,57 @@ Install Qt package and all the development tools with the following commands ins
     pacman -S git
     pacman -S mingw-w64-x86_64-gcc
 
-Ensure that you have access to "C:\" and that you can write directories in the "C:\" location.
-Also ensure that no files are present in "C:\PortableApps\ElectricalCalculator\" (or that this folder does not exist), otherwise, make a backup of these files, since the below commands will overwrite the contents.
+Ensure that you have access to C:\ and that you can write directories in the C:\ location.
+Also ensure that no files are present in "C:\PortableApps\PasteOnlyText\" (or that this folder does not exist), otherwise, make a backup of these files, since the below commands will overwrite the contents.
 
 Clone the Repository, build the project, run and deploy the application:
 
-    git clone https://github.com/francescozanellato/ElectricalCalculator.git
-    cd ElectricalCalculator
+    git clone https://github.com/francescozanellato/PasteOnlyText.git
+    cd PasteOnlyText
     qmake6
     mingw32-make.exe
-	export MY_PROJECT_DEPLOYMENT_PATH="/c/PortableApps/ElectricalCalculator"
+	export MY_PROJECT_DEPLOYMENT_PATH="/c/PortableApps/PasteOnlyText"
 	export PATH=./bin:./:$PATH
     mkdir -p $MY_PROJECT_DEPLOYMENT_PATH
-    cp ./release/ElectricalCalculator.exe $MY_PROJECT_DEPLOYMENT_PATH
-    cp ./release/ElectricalCalculator.vbs $MY_PROJECT_DEPLOYMENT_PATH
+    cp ./release/PasteOnlyText.exe $MY_PROJECT_DEPLOYMENT_PATH
+    cp ./release/PasteOnlyText.vbs $MY_PROJECT_DEPLOYMENT_PATH
     cd $MY_PROJECT_DEPLOYMENT_PATH
-    windeployqt6 --plugindir ./share/qt6/plugins $MY_PROJECT_DEPLOYMENT_PATH/ElectricalCalculator.exe
+    windeployqt6 --plugindir ./share/qt6/plugins $MY_PROJECT_DEPLOYMENT_PATH/PasteOnlyText.exe
     find $MY_PROJECT_DEPLOYMENT_PATH/share/ -type f -executable | xargs ldd | grep /mingw64 | awk '{print $3}' | xargs -i cp {} $MY_PROJECT_DEPLOYMENT_PATH/
     find $MY_PROJECT_DEPLOYMENT_PATH/ -type f -executable | xargs ldd | grep /mingw64 | awk '{print $3}' | xargs -i cp {} $MY_PROJECT_DEPLOYMENT_PATH/
     cp /mingw64/bin/libgif-7.dll ./
     rm -f D3Dcompiler_47.dll
-    explorer.exe /select,"C:\\PortableApps\\ElectricalCalculator\\ElectricalCalculator.exe"
-    $MY_PROJECT_DEPLOYMENT_PATH/ElectricalCalculator.exe &
+    explorer.exe /select,"C:\\PortableApps\\PasteOnlyText\\PasteOnlyText.exe"
+    $MY_PROJECT_DEPLOYMENT_PATH/PasteOnlyText.exe &
 
 In Windows, create the program shortcut on the Desktop, pointing to the following path:
 
-    "C:\PortableApps\ElectricalCalculator\ElectricalCalculator.exe"
+    "C:\PortableApps\PasteOnlyText\PasteOnlyText.exe"
 
 Double click the link to open the program.
 
-You can move the "ElectricalCalculator" in any folder you like.
+If you need to move the program folder in a different location, double click on the script "PasteOnlyText.vbs" instead of on "PasteOnlyText.exe". This vbs script sets some "path" variables before running the application. Therefore, after moving the program folder (e.g. to C:\PortableApps_new), you can create a shortcut on the Desktop pointing to the following path (where "C:\PortableApps_new" is the new location):
 
-Note: after compiling, the folder "C:\msys64\home\fraz3\ElectricalCalculator" can be removed. You can leave the folder "C:\msys64" for compiling other programs.
+    "C:\PortableApps_new\PasteOnlyText\PasteOnlyText.vbs"
+
+Warning: moving the program file after compiling may results in some image formats not working during the saving of the images; therefore, the /msys64/mingw64/bin folder should not been relocated and the vbs script should be used to launch the program.
+
+Note: after compiling, the folder "C:\msys64\home\fraz3\PasteOnlyText" can be removed. You can leave the folder "C:\msys64" for compiling other programs.
 
 
 # Compiling (alternative method for all operating systems):
 
+
+# Compiling
+
 Install Qt and QMake:
 
-Ensure that you have Qt and QMake installed on your system. You can download and install Qt from the Qt official website:
-https://www.qt.io/
+    Ensure that you have Qt and QMake installed on your system. You can download and install Qt from the Qt official website.
 
 Clone the Repository:
 
-    git clone https://github.com/francescozanellato/ElectricalCalculator.git
-
-cd ElectricalCalculator
+    git clone https://github.com/francescozanellato/PasteOnlyText.git
+    cd PasteOnlyText
 
 Generate Makefile using QMake:
 
@@ -115,4 +203,5 @@ Compile the Project:
 
 Run the Application:
 
-    ./ElectricalCalculator
+    ./PasteOnlyText
+
