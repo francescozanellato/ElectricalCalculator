@@ -20,10 +20,10 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-VERSION = 1.0.3
+VERSION = 1.0.4
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 DEFINES += APP_NAME=\\\"ElectricalCalculator\\\"
-QMAKE_TARGET_COPYRIGHT = "\\251 2015-2026 Francesco Zanellato. Freeware provided AS IT IS, without any warranty."
+QMAKE_TARGET_COPYRIGHT = "\\251 2015-2026 Francesco Zanellato. Freeware (GPL 3) provided AS IT IS, without any warranty. Sources: https://github.com/francescozanellato/ElectricalCalculator"
 
 CONFIG += c++17
 
@@ -46,7 +46,10 @@ FORMS += \
 
 RC_ICONS = icon.ico
 
+# 2026-07-12: added macx {} if statement:
+macx {
 QMAKE_APPLE_DEVICE_ARCHS = x86_64 x86_64h arm64
+}
 
 CONFIG(debug, debug|release) {
     DESTDIR = $${PWD}/build/debug

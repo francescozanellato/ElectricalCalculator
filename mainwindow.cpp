@@ -21,7 +21,7 @@
 #include <QMessageBox>
 #include <QDesktopServices>
 #include <QClipboard>
-#define LICENSE "ElectricalCalculator version 1.0.3\n\n© Francesco Zanellato 2015-2026\n\nThis program is freeware;\nit is provided \"AS IT IS\", without any warranty."
+#define LICENSE "ElectricalCalculator version 1.0.4\n\n© Francesco Zanellato 2015-2026\n\nThis program is released under GPL Version 3;\nit is provided \"AS IT IS\", without any warranty.\nSources available at: https://github.com/francescozanellato/ElectricalCalculator"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -115,6 +115,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->CBRating->addItems(CBRatingList);
     ui->CBRating->setCurrentIndex(CBRatingList.count()-1);
     setTabAndDefaultFocus(1);
+    //resize(400,400);
 
     //qDebug(myCompress("ciao. 123. Io mi chiamo ioo1234567890%$£!\\ooooooooooooooooooooooooooooooooo").toUtf8());
     //qDebug(myCompress(LICENSE).toUtf8());

@@ -1,6 +1,6 @@
 /*
  * Author: Francesco Paolo Luca Zanellato
- * Copyright (C) 2015-2025 Francesco Paolo Luca Zanellato
+ * Copyright (C) 2015-2026 Francesco Paolo Luca Zanellato
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,9 +21,31 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication::setStyle("Fusion");
+    // 1. Disabilita la cache RHI su disco (previene blocchi driver con Intel Xe)
+    // qputenv("QSG_RHI_SHADER_CACHE", "0");
+
+    // 2. Disabilita l'interrogazione legacy di tavolette grafiche/stylus in qwindows.dll
+    // qputenv("QT_NO_TABLET", "1");
+
+    // 3. (Opzionale) Forza il backend RHI su Direct3D 11 se il WGL fallback su OpenGL rallenta
+    // qputenv("QSG_RHI_BACKEND", "d3d11");
+
+    // --- 1. VARIABILI D'AMBIENTE (OK!) ---
+    qputenv("QT_TEXT_BACKEND", "gdi");
+    qputenv("QT_RHI_BACKEND", "d3d11");
+    qputenv("QT_PLUGIN_PATH", ".");
+    qputenv("QT_LOGGING_RULES", "*.debug=false");
+    qputenv("QSG_RHI_SHADER_CACHE", "0");
+    qputenv("QT_NO_TABLET", "1");
+    qputenv("QSG_RHI_BACKEND", "d3d11");
+
+    // Disattiva il controllo delle animazioni di Windows (evita micro-scatti iniziali)
+    qputenv("QT_ENABLE_HIGHDPI_SCALING", "1");
+
+
     //QApplication::setStyle("windowsvista");
     QApplication a(argc, argv);
+    QApplication::setStyle("Fusion");
     MainWindow w;
     w.show();
     return a.exec();

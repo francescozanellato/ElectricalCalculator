@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>653</width>
-    <height>854</height>
+    <width>691</width>
+    <height>752</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -15,6 +15,12 @@
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>612</width>
+    <height>0</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>ScaleCalculator</string>
@@ -37,6 +43,18 @@
         <string>1) VieportScale</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="leftMargin">
+         <number>1</number>
+        </property>
+        <property name="topMargin">
+         <number>1</number>
+        </property>
+        <property name="rightMargin">
+         <number>1</number>
+        </property>
+        <property name="bottomMargin">
+         <number>1</number>
+        </property>
         <item>
          <layout class="QGridLayout" name="gridLayout">
           <property name="sizeConstraint">
@@ -1041,1395 +1059,1489 @@
         <string>2) kVA-kW-kvar-PF-I</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <property name="leftMargin">
+         <number>1</number>
+        </property>
+        <property name="topMargin">
+         <number>1</number>
+        </property>
+        <property name="rightMargin">
+         <number>1</number>
+        </property>
+        <property name="bottomMargin">
+         <number>1</number>
+        </property>
         <item>
-         <layout class="QGridLayout" name="gridLayout_2">
-          <property name="sizeConstraint">
-           <enum>QLayout::SizeConstraint::SetMaximumSize</enum>
+         <widget class="QScrollArea" name="scrollArea">
+          <property name="styleSheet">
+           <string notr="true">QScrollArea, #scrollAreaWidgetContents {
+    background: transparent;
+}</string>
           </property>
-          <item row="14" column="4">
-           <widget class="QComboBox" name="CBRating">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
+          <property name="frameShape">
+           <enum>QFrame::Shape::NoFrame</enum>
+          </property>
+          <property name="lineWidth">
+           <number>0</number>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>667</width>
+             <height>679</height>
+            </rect>
+           </property>
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <property name="leftMargin">
+             <number>0</number>
             </property>
-            <property name="editable">
-             <bool>false</bool>
+            <property name="topMargin">
+             <number>0</number>
             </property>
-            <property name="currentText">
-             <string/>
+            <property name="rightMargin">
+             <number>0</number>
             </property>
-            <property name="currentIndex">
-             <number>-1</number>
+            <property name="bottomMargin">
+             <number>0</number>
             </property>
-            <property name="insertPolicy">
-             <enum>QComboBox::InsertPolicy::NoInsert</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="24" column="1">
-           <widget class="QLineEdit" name="Qf">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="text">
-             <string>250</string>
-            </property>
-            <property name="readOnly">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="8" column="0">
-           <widget class="QLabel" name="label_65">
-            <property name="toolTip">
-             <string>Impedenza di corto-circuito</string>
-            </property>
-            <property name="text">
-             <string>X/R ratio:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="3">
-           <widget class="QLabel" name="label_10">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Notes:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="13" column="2">
-           <widget class="QComboBox" name="ratedReactivePowerUnit">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="editable">
-             <bool>false</bool>
-            </property>
-            <property name="currentText">
-             <string>kvar</string>
-            </property>
-            <property name="insertPolicy">
-             <enum>QComboBox::InsertPolicy::NoInsert</enum>
-            </property>
-            <item>
-             <property name="text">
-              <string>kvar</string>
-             </property>
+            <item row="0" column="0">
+             <layout class="QGridLayout" name="gridLayout_2">
+              <property name="sizeConstraint">
+               <enum>QLayout::SizeConstraint::SetMaximumSize</enum>
+              </property>
+              <property name="spacing">
+               <number>6</number>
+              </property>
+              <item row="8" column="2">
+               <widget class="QLabel" name="label_70">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>-</string>
+                </property>
+               </widget>
+              </item>
+              <item row="23" column="0">
+               <widget class="QLabel" name="label_46">
+                <property name="toolTip">
+                 <string>Temperatura finale del conduttore</string>
+                </property>
+                <property name="text">
+                 <string>Qf: final conductor temp.:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="3" colspan="2">
+               <widget class="QLabel" name="label_19">
+                <property name="text">
+                 <string>1 MW = 1000 kW = 1000000 W</string>
+                </property>
+               </widget>
+              </item>
+              <item row="16" column="0" colspan="2">
+               <widget class="QLabel" name="label_12">
+                <property name="font">
+                 <font>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="toolTip">
+                 <string>DIMENSIONAMENTO DEL CONTUTTORE DI MESSA A TERRA</string>
+                </property>
+                <property name="text">
+                 <string>EARTHING CONDUCTOR SIZING:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="20" column="3" colspan="2">
+               <widget class="QLabel" name="label_49">
+                <property name="text">
+                 <string>k: 226 (Cu), 148 (Al), 78 (Steel)</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="2">
+               <widget class="QComboBox" name="ratedVoltageUnit">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="editable">
+                 <bool>false</bool>
+                </property>
+                <property name="currentText">
+                 <string>kV</string>
+                </property>
+                <property name="insertPolicy">
+                 <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>kV</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>V</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QComboBox" name="ratedPower">
+                <property name="editable">
+                 <bool>true</bool>
+                </property>
+                <property name="currentText">
+                 <string>10</string>
+                </property>
+                <property name="currentIndex">
+                 <number>2</number>
+                </property>
+                <property name="insertPolicy">
+                 <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>1000</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>100</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>10</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>0.1</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="21" column="3" colspan="2">
+               <widget class="QLabel" name="label_36">
+                <property name="text">
+                 <string>ß: 234,5 (Cu), 228 (Al), 202 (Steel)</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="2">
+               <widget class="QLabel" name="label_39">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>-</string>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="1">
+               <widget class="QLineEdit" name="ratedActivePower">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="20" column="0">
+               <widget class="QLabel" name="label_50">
+                <property name="toolTip">
+                 <string>Costante del conduttore</string>
+                </property>
+                <property name="text">
+                 <string>k: conductor constant:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="0">
+               <widget class="QLabel" name="label_16">
+                <property name="toolTip">
+                 <string>Efficienza a pieno carico</string>
+                </property>
+                <property name="text">
+                 <string>Full Load Efficiency:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="11" column="3" colspan="2">
+               <widget class="QLabel" name="label_23">
+                <property name="text">
+                 <string>Power absorbed at the terminals</string>
+                </property>
+               </widget>
+              </item>
+              <item row="24" column="1">
+               <widget class="QLineEdit" name="earthingConductorSize_mm2">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="1">
+               <widget class="QComboBox" name="CBSpareMargin">
+                <property name="editable">
+                 <bool>true</bool>
+                </property>
+                <property name="currentText">
+                 <string>20</string>
+                </property>
+                <property name="currentIndex">
+                 <number>4</number>
+                </property>
+                <property name="insertPolicy">
+                 <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>0.1</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>0.2</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>10</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>20</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QLabel" name="label_8">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Unit:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="24" column="3" colspan="2">
+               <widget class="QLabel" name="label_63">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Calculation as per CEI EN 50522:2022</string>
+                </property>
+               </widget>
+              </item>
+              <item row="15" column="3" colspan="2">
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <item>
+                 <widget class="QLabel" name="label_71">
+                  <property name="toolTip">
+                   <string>Ip: Short-circuit peak (crest) value
+Ip=(1.02+0.98*e^(-3/(X/R))*sqrt(2)*Ik&quot;</string>
+                  </property>
+                  <property name="text">
+                   <string>Peak contribution (Ip):</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="peakShortCircuitContribution">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="toolTip">
+                   <string>Ip: Short-circuit peak (crest) value
+Ip=(1.02+0.98*e^(-3/(X/R))*sqrt(2)*Ik&quot;</string>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="shortCircuitContributionUnit_2">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>kAp</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+              <item row="9" column="2">
+               <widget class="QComboBox" name="CBSpareMarginUnit">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="editable">
+                 <bool>false</bool>
+                </property>
+                <property name="currentText">
+                 <string>%</string>
+                </property>
+                <property name="insertPolicy">
+                 <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>%</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>p.u.</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="14" column="3">
+               <widget class="QLabel" name="label_34">
+                <property name="toolTip">
+                 <string>Corrente a pieno carico. Taglia dell'interruttore (A)</string>
+                </property>
+                <property name="text">
+                 <string>Full-load current. CB rating (A):</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_13">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Variable:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="17" column="3" colspan="2">
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <item>
+                 <widget class="QLabel" name="label_54">
+                  <property name="toolTip">
+                   <string>Tempo di interruzione del guasto</string>
+                  </property>
+                  <property name="text">
+                   <string>Fault clearing time:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="faultClearingTime_s">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="text">
+                   <string>0.5</string>
+                  </property>
+                  <property name="readOnly">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="faultClearingTime_s_Unit">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>s</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+              <item row="8" column="1">
+               <widget class="QComboBox" name="X_over_R_ratio">
+                <property name="editable">
+                 <bool>true</bool>
+                </property>
+                <property name="currentText">
+                 <string>20</string>
+                </property>
+                <property name="currentIndex">
+                 <number>1</number>
+                </property>
+                <property name="insertPolicy">
+                 <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>30</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>20</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>18</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>15</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>10</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>8</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>4</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>2</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>1.5</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="14" column="2">
+               <widget class="QLabel" name="currentUnit">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>A</string>
+                </property>
+               </widget>
+              </item>
+              <item row="18" column="1">
+               <widget class="QLineEdit" name="splitFactor">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="text">
+                 <string>1</string>
+                </property>
+                <property name="readOnly">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_11">
+                <property name="toolTip">
+                 <string>Numero di fasi</string>
+                </property>
+                <property name="text">
+                 <string>No. of phases:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="11" column="1">
+               <widget class="QLineEdit" name="ratedApparentPower">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="2">
+               <widget class="QComboBox" name="ratedActivePowerUnit">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="editable">
+                 <bool>false</bool>
+                </property>
+                <property name="currentText">
+                 <string>kW</string>
+                </property>
+                <property name="insertPolicy">
+                 <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>kW</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>MW</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="11" column="2">
+               <widget class="QComboBox" name="ratedApparentPowerUnit">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="editable">
+                 <bool>false</bool>
+                </property>
+                <property name="currentText">
+                 <string>kVA</string>
+                </property>
+                <property name="insertPolicy">
+                 <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>kVA</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>MVA</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="8" column="0">
+               <widget class="QLabel" name="label_65">
+                <property name="toolTip">
+                 <string>Impedenza di corto-circuito</string>
+                </property>
+                <property name="text">
+                 <string>X/R ratio:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QComboBox" name="numberOfPhases">
+                <property name="editable">
+                 <bool>false</bool>
+                </property>
+                <property name="currentText">
+                 <string>three-phase</string>
+                </property>
+                <property name="insertPolicy">
+                 <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>three-phase</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>single-phase</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="23" column="3" colspan="2">
+               <widget class="QLabel" name="label_47">
+                <property name="text">
+                 <string>250°C for XLPE, 160°C for PVC</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="2">
+               <widget class="QComboBox" name="ratedPowerUnit">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="editable">
+                 <bool>false</bool>
+                </property>
+                <property name="currentText">
+                 <string>kW</string>
+                </property>
+                <property name="insertPolicy">
+                 <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>kW</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>kVA</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>kvar</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>MW</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>MVA</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Mvar</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="15" column="1">
+               <widget class="QLineEdit" name="shortCircuitContribution">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="label_9">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Value:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="17" column="1">
+               <widget class="QLineEdit" name="earthFaultCurrent_kA">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="text">
+                 <string>25</string>
+                </property>
+                <property name="readOnly">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="15" column="0">
+               <widget class="QLabel" name="label_35">
+                <property name="toolTip">
+                 <string>Contributo di corto-circuito
+Ik&quot;: initial RMS symmetric short-circuit current</string>
+                </property>
+                <property name="text">
+                 <string>Short-circuit contribution (Ik&quot;):</string>
+                </property>
+               </widget>
+              </item>
+              <item row="22" column="0">
+               <widget class="QLabel" name="label_43">
+                <property name="toolTip">
+                 <string>Temperatura iniziale del conduttore</string>
+                </property>
+                <property name="text">
+                 <string>Qi: initial conductor temp.:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="2">
+               <widget class="QComboBox" name="shortCircuitImpedanceUnit">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="editable">
+                 <bool>false</bool>
+                </property>
+                <property name="currentText">
+                 <string>%</string>
+                </property>
+                <property name="insertPolicy">
+                 <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>%</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>p.u.</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="6" column="0">
+               <widget class="QLabel" name="label_17">
+                <property name="toolTip">
+                 <string>Fattore di potenza nominale</string>
+                </property>
+                <property name="text">
+                 <string>Rated power factor:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="0">
+               <widget class="QLabel" name="label_18">
+                <property name="toolTip">
+                 <string>Impedenza di corto-circuito</string>
+                </property>
+                <property name="text">
+                 <string>Short-circuit Impedance:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3">
+               <widget class="QLabel" name="label_10">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Notes:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="14" column="0">
+               <widget class="QLabel" name="label_32">
+                <property name="toolTip">
+                 <string>Corrente nominale</string>
+                </property>
+                <property name="text">
+                 <string>Rated current:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QComboBox" name="ratedVoltage">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="editable">
+                 <bool>true</bool>
+                </property>
+                <property name="currentText">
+                 <string>0.4</string>
+                </property>
+                <property name="currentIndex">
+                 <number>5</number>
+                </property>
+                <property name="insertPolicy">
+                 <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>400</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>380</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>220</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>132</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>20</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>0.4</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>0.23</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>0.110</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="21" column="1">
+               <widget class="QLineEdit" name="beta">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="text">
+                 <string>234.5</string>
+                </property>
+                <property name="readOnly">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="3" colspan="2">
+               <widget class="QLabel" name="label_22">
+                <property name="text">
+                 <string>For motors, generators and transformers</string>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="0">
+               <widget class="QLabel" name="label_25">
+                <property name="toolTip">
+                 <string>Potenza attiva nominale</string>
+                </property>
+                <property name="text">
+                 <string>Rated active power:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="1">
+               <widget class="QComboBox" name="shortCircuitImpedance">
+                <property name="editable">
+                 <bool>true</bool>
+                </property>
+                <property name="currentText">
+                 <string>16</string>
+                </property>
+                <property name="insertPolicy">
+                 <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>16</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>10</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>4</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="label_14">
+                <property name="toolTip">
+                 <string>Tensione nominale</string>
+                </property>
+                <property name="text">
+                 <string>Rated voltage:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="20" column="2">
+               <widget class="QLabel" name="label_48">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>-</string>
+                </property>
+               </widget>
+              </item>
+              <item row="8" column="3" colspan="2">
+               <widget class="QLabel" name="label_69">
+                <property name="text">
+                 <string>Ip=(1.02+0.98*e^(-3/(X/R))*sqrt(2)*Ik&quot;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="24" column="0">
+               <widget class="QPushButton" name="Earthing_Calculation">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="toolTip">
+                 <string>Dimensione del conduttore di messa a terra</string>
+                </property>
+                <property name="text">
+                 <string>Earthing conductor size:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="17" column="0">
+               <widget class="QLabel" name="label_55">
+                <property name="toolTip">
+                 <string>Corrente massima di guasto a terra</string>
+                </property>
+                <property name="text">
+                 <string>Max. earth fault current:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="0">
+               <widget class="QPushButton" name="Calculation_kVA">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Calculation</string>
+                </property>
+               </widget>
+              </item>
+              <item row="24" column="2">
+               <widget class="QLabel" name="earthingConductorSize_mm2_Unit">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>mm2</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="1">
+               <widget class="QComboBox" name="fullLoadEfficiency">
+                <property name="editable">
+                 <bool>true</bool>
+                </property>
+                <property name="currentText">
+                 <string>100</string>
+                </property>
+                <property name="insertPolicy">
+                 <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>100</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>90</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>85</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>80</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="label_15">
+                <property name="toolTip">
+                 <string>Potenza nominale</string>
+                </property>
+                <property name="text">
+                 <string>Rated power:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="14" column="4">
+               <widget class="QComboBox" name="CBRating">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="editable">
+                 <bool>false</bool>
+                </property>
+                <property name="currentText">
+                 <string/>
+                </property>
+                <property name="currentIndex">
+                 <number>-1</number>
+                </property>
+                <property name="insertPolicy">
+                 <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="3" colspan="2">
+               <widget class="QLabel" name="label_20">
+                <property name="text">
+                 <string>For motors and transformers</string>
+                </property>
+               </widget>
+              </item>
+              <item row="17" column="2">
+               <widget class="QLabel" name="label_40">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>kA</string>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="3" colspan="2">
+               <widget class="QLabel" name="label_28">
+                <property name="text">
+                 <string>Added to rated current to select the CB</string>
+                </property>
+               </widget>
+              </item>
+              <item row="23" column="2">
+               <widget class="QLabel" name="label_45">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>°C</string>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="0">
+               <widget class="QLabel" name="label_27">
+                <property name="toolTip">
+                 <string>Margine di riserva interruttore</string>
+                </property>
+                <property name="text">
+                 <string>CB spare margin:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="14" column="1">
+               <widget class="QLineEdit" name="ratedCurrent_A">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="16" column="2">
+               <widget class="QPushButton" name="CopyDown">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>↓ Copy ↓</string>
+                </property>
+               </widget>
+              </item>
+              <item row="23" column="1">
+               <widget class="QLineEdit" name="Qf">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="text">
+                 <string>250</string>
+                </property>
+                <property name="readOnly">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="20" column="1">
+               <widget class="QLineEdit" name="_k">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="text">
+                 <string>226</string>
+                </property>
+                <property name="readOnly">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="2">
+               <widget class="QComboBox" name="powerFactorUnit">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="editable">
+                 <bool>false</bool>
+                </property>
+                <property name="currentText">
+                 <string>%</string>
+                </property>
+                <property name="insertPolicy">
+                 <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>%</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>p.u.</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="18" column="0">
+               <widget class="QLabel" name="label_53">
+                <property name="toolTip">
+                 <string>Fattore di divisione della corrente di guasto a terra</string>
+                </property>
+                <property name="text">
+                 <string>Earth fault split factor:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="21" column="2">
+               <widget class="QLabel" name="label_42">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>-</string>
+                </property>
+               </widget>
+              </item>
+              <item row="16" column="3" colspan="2">
+               <widget class="QPushButton" name="copySizingFormula">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Copy short-circuit sizing formula</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="3" colspan="2">
+               <widget class="QLabel" name="label_21">
+                <property name="text">
+                 <string>Abbreviation: PF, or COS(PHI)</string>
+                </property>
+               </widget>
+              </item>
+              <item row="11" column="0">
+               <widget class="QLabel" name="label_7">
+                <property name="toolTip">
+                 <string>Potenza apparente nominale</string>
+                </property>
+                <property name="text">
+                 <string>Rated apparent power:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="2">
+               <widget class="QComboBox" name="efficiencyUnit">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="editable">
+                 <bool>false</bool>
+                </property>
+                <property name="currentText">
+                 <string>%</string>
+                </property>
+                <property name="insertPolicy">
+                 <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>%</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>p.u.</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="22" column="2">
+               <widget class="QLabel" name="label_44">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>°C</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="1">
+               <widget class="QComboBox" name="powerFactor">
+                <property name="editable">
+                 <bool>true</bool>
+                </property>
+                <property name="currentText">
+                 <string>80</string>
+                </property>
+                <property name="currentIndex">
+                 <number>3</number>
+                </property>
+                <property name="insertPolicy">
+                 <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>100</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>90</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>85</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>80</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="22" column="1">
+               <widget class="QLineEdit" name="Qi">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="text">
+                 <string>25</string>
+                </property>
+                <property name="readOnly">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="21" column="0">
+               <widget class="QLabel" name="label_51">
+                <property name="toolTip">
+                 <string>Coefficiente di temperatura del conduttore</string>
+                </property>
+                <property name="text">
+                 <string>ß: conductor temp. coeff.:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="15" column="2">
+               <widget class="QLabel" name="shortCircuitContributionUnit">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>kA</string>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="3" colspan="2">
+               <layout class="QHBoxLayout" name="horizontalLayout_6">
+                <item>
+                 <widget class="QLabel" name="label_29">
+                  <property name="toolTip">
+                   <string>Potenza reattiva nominale</string>
+                  </property>
+                  <property name="text">
+                   <string>Rated reactive power:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="ratedReactivePower">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="ratedReactivePowerUnit">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="editable">
+                   <bool>false</bool>
+                  </property>
+                  <property name="currentText">
+                   <string>kvar</string>
+                  </property>
+                  <property name="insertPolicy">
+                   <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>kvar</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Mvar</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
             </item>
-            <item>
-             <property name="text">
-              <string>Mvar</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="label_11">
-            <property name="toolTip">
-             <string>Numero di fasi</string>
-            </property>
-            <property name="text">
-             <string>No. of phases:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_13">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Variable:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="8" column="2">
-           <widget class="QLabel" name="label_70">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>-</string>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="0">
-           <widget class="QLabel" name="label_18">
-            <property name="toolTip">
-             <string>Impedenza di corto-circuito</string>
-            </property>
-            <property name="text">
-             <string>Short-circuit Impedance:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="22" column="2">
-           <widget class="QLabel" name="label_42">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>-</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QComboBox" name="ratedPower">
-            <property name="editable">
-             <bool>true</bool>
-            </property>
-            <property name="currentText">
-             <string>10</string>
-            </property>
-            <property name="currentIndex">
-             <number>2</number>
-            </property>
-            <property name="insertPolicy">
-             <enum>QComboBox::InsertPolicy::NoInsert</enum>
-            </property>
-            <item>
-             <property name="text">
-              <string>1000</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>100</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>10</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0.1</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="20" column="0">
-           <widget class="QLabel" name="label_54">
-            <property name="toolTip">
-             <string>Tempo di interruzione del guasto</string>
-            </property>
-            <property name="text">
-             <string>Fault clearing time:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="14" column="2">
-           <widget class="QLabel" name="currentUnit">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>A</string>
-            </property>
-           </widget>
-          </item>
-          <item row="11" column="0">
-           <widget class="QLabel" name="label_7">
-            <property name="toolTip">
-             <string>Potenza apparente nominale</string>
-            </property>
-            <property name="text">
-             <string>Rated apparent power:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="2">
-           <widget class="QComboBox" name="efficiencyUnit">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="editable">
-             <bool>false</bool>
-            </property>
-            <property name="currentText">
-             <string>%</string>
-            </property>
-            <property name="insertPolicy">
-             <enum>QComboBox::InsertPolicy::NoInsert</enum>
-            </property>
-            <item>
-             <property name="text">
-              <string>%</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>p.u.</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QComboBox" name="numberOfPhases">
-            <property name="editable">
-             <bool>false</bool>
-            </property>
-            <property name="currentText">
-             <string>three-phase</string>
-            </property>
-            <property name="insertPolicy">
-             <enum>QComboBox::InsertPolicy::NoInsert</enum>
-            </property>
-            <item>
-             <property name="text">
-              <string>three-phase</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>single-phase</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="8" column="1">
-           <widget class="QComboBox" name="X_over_R_ratio">
-            <property name="editable">
-             <bool>true</bool>
-            </property>
-            <property name="currentText">
-             <string>20</string>
-            </property>
-            <property name="currentIndex">
-             <number>1</number>
-            </property>
-            <property name="insertPolicy">
-             <enum>QComboBox::InsertPolicy::NoInsert</enum>
-            </property>
-            <item>
-             <property name="text">
-              <string>30</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>20</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>18</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>15</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>10</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>8</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1.5</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="25" column="2">
-           <widget class="QLabel" name="earthingConductorSize_mm2_Unit">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>mm2</string>
-            </property>
-           </widget>
-          </item>
-          <item row="9" column="3" colspan="2">
-           <widget class="QLabel" name="label_28">
-            <property name="text">
-             <string>Added to rated current to select the CB</string>
-            </property>
-           </widget>
-          </item>
-          <item row="14" column="3">
-           <widget class="QLabel" name="label_34">
-            <property name="toolTip">
-             <string>Corrente a pieno carico. Taglia dell'interruttore (A)</string>
-            </property>
-            <property name="text">
-             <string>Full-load current. CB rating (A):</string>
-            </property>
-           </widget>
-          </item>
-          <item row="17" column="3" colspan="2">
-           <widget class="QPushButton" name="copySizingFormula">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Copy short-circuit sizing formula</string>
-            </property>
-           </widget>
-          </item>
-          <item row="24" column="2">
-           <widget class="QLabel" name="label_45">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>°C</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="1">
-           <widget class="QComboBox" name="powerFactor">
-            <property name="editable">
-             <bool>true</bool>
-            </property>
-            <property name="currentText">
-             <string>80</string>
-            </property>
-            <property name="currentIndex">
-             <number>3</number>
-            </property>
-            <property name="insertPolicy">
-             <enum>QComboBox::InsertPolicy::NoInsert</enum>
-            </property>
-            <item>
-             <property name="text">
-              <string>100</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>90</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>85</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>80</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="21" column="3" colspan="2">
-           <widget class="QLabel" name="label_49">
-            <property name="text">
-             <string>k: 226 (Cu), 148 (Al), 78 (Steel)</string>
-            </property>
-           </widget>
-          </item>
-          <item row="18" column="3" colspan="2">
-           <widget class="QLabel" name="label_63">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Calculation as per CEI EN 50522:2022</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="1">
-           <widget class="QComboBox" name="ratedVoltage">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="editable">
-             <bool>true</bool>
-            </property>
-            <property name="currentText">
-             <string>0.4</string>
-            </property>
-            <property name="currentIndex">
-             <number>5</number>
-            </property>
-            <property name="insertPolicy">
-             <enum>QComboBox::InsertPolicy::NoInsert</enum>
-            </property>
-            <item>
-             <property name="text">
-              <string>400</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>380</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>220</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>132</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>20</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0.4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0.23</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0.110</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="9" column="1">
-           <widget class="QComboBox" name="CBSpareMargin">
-            <property name="editable">
-             <bool>true</bool>
-            </property>
-            <property name="currentText">
-             <string>20</string>
-            </property>
-            <property name="currentIndex">
-             <number>4</number>
-            </property>
-            <property name="insertPolicy">
-             <enum>QComboBox::InsertPolicy::NoInsert</enum>
-            </property>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0.1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0.2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>10</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>20</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="5" column="0">
-           <widget class="QLabel" name="label_16">
-            <property name="toolTip">
-             <string>Efficienza a pieno carico</string>
-            </property>
-            <property name="text">
-             <string>Full Load Efficiency:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="11" column="1">
-           <widget class="QLineEdit" name="ratedApparentPower">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="label_15">
-            <property name="toolTip">
-             <string>Potenza nominale</string>
-            </property>
-            <property name="text">
-             <string>Rated power:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="23" column="1">
-           <widget class="QLineEdit" name="Qi">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="text">
-             <string>25</string>
-            </property>
-            <property name="readOnly">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="13" column="1">
-           <widget class="QLineEdit" name="ratedReactivePower">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="18" column="0">
-           <widget class="QLabel" name="label_55">
-            <property name="toolTip">
-             <string>Corrente massima di guasto a terra</string>
-            </property>
-            <property name="text">
-             <string>Max. earth fault current:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="1">
-           <widget class="QComboBox" name="shortCircuitImpedance">
-            <property name="editable">
-             <bool>true</bool>
-            </property>
-            <property name="currentText">
-             <string>16</string>
-            </property>
-            <property name="insertPolicy">
-             <enum>QComboBox::InsertPolicy::NoInsert</enum>
-            </property>
-            <item>
-             <property name="text">
-              <string>16</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>10</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="23" column="0">
-           <widget class="QLabel" name="label_43">
-            <property name="toolTip">
-             <string>Temperatura iniziale del conduttore</string>
-            </property>
-            <property name="text">
-             <string>Qi: initial conductor temp.:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="11" column="3" colspan="2">
-           <widget class="QLabel" name="label_23">
-            <property name="text">
-             <string>Power absorbed at the terminals</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="2">
-           <widget class="QComboBox" name="powerFactorUnit">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="editable">
-             <bool>false</bool>
-            </property>
-            <property name="currentText">
-             <string>%</string>
-            </property>
-            <property name="insertPolicy">
-             <enum>QComboBox::InsertPolicy::NoInsert</enum>
-            </property>
-            <item>
-             <property name="text">
-              <string>%</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>p.u.</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="1" column="2">
-           <widget class="QLabel" name="label_8">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Unit:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="14" column="1">
-           <widget class="QLineEdit" name="ratedCurrent_A">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="24" column="0">
-           <widget class="QLabel" name="label_46">
-            <property name="toolTip">
-             <string>Temperatura finale del conduttore</string>
-            </property>
-            <property name="text">
-             <string>Qf: final conductor temp.:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="19" column="1">
-           <widget class="QLineEdit" name="splitFactor">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="text">
-             <string>1</string>
-            </property>
-            <property name="readOnly">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="12" column="2">
-           <widget class="QComboBox" name="ratedActivePowerUnit">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="editable">
-             <bool>false</bool>
-            </property>
-            <property name="currentText">
-             <string>kW</string>
-            </property>
-            <property name="insertPolicy">
-             <enum>QComboBox::InsertPolicy::NoInsert</enum>
-            </property>
-            <item>
-             <property name="text">
-              <string>kW</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>MW</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="7" column="3" colspan="2">
-           <widget class="QLabel" name="label_22">
-            <property name="text">
-             <string>For motors, generators and transformers</string>
-            </property>
-           </widget>
-          </item>
-          <item row="21" column="1">
-           <widget class="QLineEdit" name="_k">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="text">
-             <string>226</string>
-            </property>
-            <property name="readOnly">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="15" column="2">
-           <widget class="QLabel" name="shortCircuitContributionUnit">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>kA</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="2">
-           <widget class="QComboBox" name="ratedPowerUnit">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="editable">
-             <bool>false</bool>
-            </property>
-            <property name="currentText">
-             <string>kW</string>
-            </property>
-            <property name="insertPolicy">
-             <enum>QComboBox::InsertPolicy::NoInsert</enum>
-            </property>
-            <item>
-             <property name="text">
-              <string>kW</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>kVA</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>kvar</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>MW</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>MVA</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Mvar</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="17" column="0" colspan="2">
-           <widget class="QLabel" name="label_12">
-            <property name="font">
-             <font>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="toolTip">
-             <string>DIMENSIONAMENTO DEL CONTUTTORE DI MESSA A TERRA</string>
-            </property>
-            <property name="text">
-             <string>EARTHING CONDUCTOR SIZING:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="15" column="1">
-           <widget class="QLineEdit" name="shortCircuitContribution">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="21" column="2">
-           <widget class="QLabel" name="label_48">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>-</string>
-            </property>
-           </widget>
-          </item>
-          <item row="9" column="2">
-           <widget class="QComboBox" name="CBSpareMarginUnit">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="editable">
-             <bool>false</bool>
-            </property>
-            <property name="currentText">
-             <string>%</string>
-            </property>
-            <property name="insertPolicy">
-             <enum>QComboBox::InsertPolicy::NoInsert</enum>
-            </property>
-            <item>
-             <property name="text">
-              <string>%</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>p.u.</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="7" column="2">
-           <widget class="QComboBox" name="shortCircuitImpedanceUnit">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="editable">
-             <bool>false</bool>
-            </property>
-            <property name="currentText">
-             <string>%</string>
-            </property>
-            <property name="insertPolicy">
-             <enum>QComboBox::InsertPolicy::NoInsert</enum>
-            </property>
-            <item>
-             <property name="text">
-              <string>%</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>p.u.</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="5" column="3" colspan="2">
-           <widget class="QLabel" name="label_20">
-            <property name="text">
-             <string>For motors and transformers</string>
-            </property>
-           </widget>
-          </item>
-          <item row="22" column="3" colspan="2">
-           <widget class="QLabel" name="label_36">
-            <property name="text">
-             <string>ß: 234,5 (Cu), 228 (Al), 202 (Steel)</string>
-            </property>
-           </widget>
-          </item>
-          <item row="20" column="1">
-           <widget class="QLineEdit" name="faultClearingTime_s">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="text">
-             <string>0.5</string>
-            </property>
-            <property name="readOnly">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="22" column="1">
-           <widget class="QLineEdit" name="beta">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="text">
-             <string>234.5</string>
-            </property>
-            <property name="readOnly">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="9" column="0">
-           <widget class="QLabel" name="label_27">
-            <property name="toolTip">
-             <string>Margine di riserva interruttore</string>
-            </property>
-            <property name="text">
-             <string>CB spare margin:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="12" column="0">
-           <widget class="QLabel" name="label_25">
-            <property name="toolTip">
-             <string>Potenza attiva nominale</string>
-            </property>
-            <property name="text">
-             <string>Rated active power:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="18" column="1">
-           <widget class="QLineEdit" name="earthFaultCurrent_kA">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="text">
-             <string>25</string>
-            </property>
-            <property name="readOnly">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="22" column="0">
-           <widget class="QLabel" name="label_51">
-            <property name="toolTip">
-             <string>Coefficiente di temperatura del conduttore</string>
-            </property>
-            <property name="text">
-             <string>ß: conductor temp. coeff.:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="8" column="3" colspan="2">
-           <widget class="QLabel" name="label_69">
-            <property name="text">
-             <string>Ip=(1.02+0.98*e^(-3/(X/R))*sqrt(2)*Ik&quot;</string>
-            </property>
-           </widget>
-          </item>
-          <item row="24" column="3" colspan="2">
-           <widget class="QLabel" name="label_47">
-            <property name="text">
-             <string>250°C for XLPE, 160°C for PVC</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="2">
-           <widget class="QLabel" name="label_39">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>-</string>
-            </property>
-           </widget>
-          </item>
-          <item row="19" column="0">
-           <widget class="QLabel" name="label_53">
-            <property name="toolTip">
-             <string>Fattore di divisione della corrente di guasto a terra</string>
-            </property>
-            <property name="text">
-             <string>Earth fault split factor:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="2">
-           <widget class="QComboBox" name="ratedVoltageUnit">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="editable">
-             <bool>false</bool>
-            </property>
-            <property name="currentText">
-             <string>kV</string>
-            </property>
-            <property name="insertPolicy">
-             <enum>QComboBox::InsertPolicy::NoInsert</enum>
-            </property>
-            <item>
-             <property name="text">
-              <string>kV</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>V</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="4" column="3" colspan="2">
-           <widget class="QLabel" name="label_19">
-            <property name="text">
-             <string>1 MW = 1000 kW = 1000000 W</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="1">
-           <widget class="QComboBox" name="fullLoadEfficiency">
-            <property name="editable">
-             <bool>true</bool>
-            </property>
-            <property name="currentText">
-             <string>100</string>
-            </property>
-            <property name="insertPolicy">
-             <enum>QComboBox::InsertPolicy::NoInsert</enum>
-            </property>
-            <item>
-             <property name="text">
-              <string>100</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>90</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>85</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>80</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="11" column="2">
-           <widget class="QComboBox" name="ratedApparentPowerUnit">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="editable">
-             <bool>false</bool>
-            </property>
-            <property name="currentText">
-             <string>kVA</string>
-            </property>
-            <property name="insertPolicy">
-             <enum>QComboBox::InsertPolicy::NoInsert</enum>
-            </property>
-            <item>
-             <property name="text">
-              <string>kVA</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>MVA</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="20" column="2">
-           <widget class="QLabel" name="faultClearingTime_s_Unit">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>s</string>
-            </property>
-           </widget>
-          </item>
-          <item row="15" column="0">
-           <widget class="QLabel" name="label_35">
-            <property name="toolTip">
-             <string>Contributo di corto-circuito</string>
-            </property>
-            <property name="text">
-             <string>Short-circuit contribution:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="12" column="1">
-           <widget class="QLineEdit" name="ratedActivePower">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="25" column="0">
-           <widget class="QPushButton" name="Earthing_Calculation">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="toolTip">
-             <string>Dimensione del conduttore di messa a terra</string>
-            </property>
-            <property name="text">
-             <string>Earthing conductor size:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="18" column="2">
-           <widget class="QLabel" name="label_40">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>kA</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="label_14">
-            <property name="toolTip">
-             <string>Tensione nominale</string>
-            </property>
-            <property name="text">
-             <string>Rated voltage:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="23" column="2">
-           <widget class="QLabel" name="label_44">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>°C</string>
-            </property>
-           </widget>
-          </item>
-          <item row="13" column="0">
-           <widget class="QLabel" name="label_29">
-            <property name="toolTip">
-             <string>Potenza reattiva nominale</string>
-            </property>
-            <property name="text">
-             <string>Rated reactive power:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="0">
-           <widget class="QLabel" name="label_17">
-            <property name="toolTip">
-             <string>Fattore di potenza nominale</string>
-            </property>
-            <property name="text">
-             <string>Rated power factor:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLabel" name="label_9">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Value:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="10" column="0">
-           <widget class="QPushButton" name="Calculation_kVA">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Calculation</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="3" colspan="2">
-           <widget class="QLabel" name="label_21">
-            <property name="text">
-             <string>Abbreviation: PF, or COS(PHI)</string>
-            </property>
-           </widget>
-          </item>
-          <item row="17" column="2">
-           <widget class="QPushButton" name="CopyDown">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>↓ Copy ↓</string>
-            </property>
-           </widget>
-          </item>
-          <item row="25" column="1">
-           <widget class="QLineEdit" name="earthingConductorSize_mm2">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="text">
-             <string>0</string>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="21" column="0">
-           <widget class="QLabel" name="label_50">
-            <property name="toolTip">
-             <string>Costante del conduttore</string>
-            </property>
-            <property name="text">
-             <string>k: conductor constant:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="14" column="0">
-           <widget class="QLabel" name="label_32">
-            <property name="toolTip">
-             <string>Corrente nominale</string>
-            </property>
-            <property name="text">
-             <string>Rated current:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="16" column="0">
-           <widget class="QLabel" name="label_71">
-            <property name="toolTip">
-             <string>Contributo di corto-circuito</string>
-            </property>
-            <property name="text">
-             <string>Peak contribution (Ip):</string>
-            </property>
-           </widget>
-          </item>
-          <item row="16" column="1">
-           <widget class="QLineEdit" name="peakShortCircuitContribution">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="16" column="2">
-           <widget class="QLabel" name="shortCircuitContributionUnit_2">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>kAp</string>
-            </property>
-           </widget>
-          </item>
-          <item row="16" column="3" colspan="2">
-           <widget class="QLabel" name="label_72">
-            <property name="toolTip">
-             <string>Corrente a pieno carico. Taglia dell'interruttore (A)</string>
-            </property>
-            <property name="text">
-             <string>Ip: Short-circuit peak (crest) value</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+           </layout>
+          </widget>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -2438,6 +2550,18 @@
         <string>3) kVA Example</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="leftMargin">
+         <number>1</number>
+        </property>
+        <property name="topMargin">
+         <number>1</number>
+        </property>
+        <property name="rightMargin">
+         <number>1</number>
+        </property>
+        <property name="bottomMargin">
+         <number>1</number>
+        </property>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
@@ -2482,7 +2606,7 @@ I = 10 / 0.4 / sqrt(3) / 0.9 / 0.8 = 20.047 A</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>653</width>
+     <width>691</width>
      <height>22</height>
     </rect>
    </property>
@@ -2589,6 +2713,40 @@ I = 10 / 0.4 / sqrt(3) / 0.9 / 0.8 = 20.047 A</string>
  </widget>
  <tabstops>
   <tabstop>tabWidget</tabstop>
+  <tabstop>numberOfPhases</tabstop>
+  <tabstop>ratedVoltage</tabstop>
+  <tabstop>ratedVoltageUnit</tabstop>
+  <tabstop>ratedPower</tabstop>
+  <tabstop>ratedPowerUnit</tabstop>
+  <tabstop>fullLoadEfficiency</tabstop>
+  <tabstop>efficiencyUnit</tabstop>
+  <tabstop>powerFactor</tabstop>
+  <tabstop>powerFactorUnit</tabstop>
+  <tabstop>shortCircuitImpedance</tabstop>
+  <tabstop>shortCircuitImpedanceUnit</tabstop>
+  <tabstop>X_over_R_ratio</tabstop>
+  <tabstop>CBSpareMargin</tabstop>
+  <tabstop>CBSpareMarginUnit</tabstop>
+  <tabstop>Calculation_kVA</tabstop>
+  <tabstop>ratedApparentPower</tabstop>
+  <tabstop>ratedApparentPowerUnit</tabstop>
+  <tabstop>ratedActivePower</tabstop>
+  <tabstop>ratedActivePowerUnit</tabstop>
+  <tabstop>ratedCurrent_A</tabstop>
+  <tabstop>CBRating</tabstop>
+  <tabstop>shortCircuitContribution</tabstop>
+  <tabstop>peakShortCircuitContribution</tabstop>
+  <tabstop>CopyDown</tabstop>
+  <tabstop>copySizingFormula</tabstop>
+  <tabstop>earthFaultCurrent_kA</tabstop>
+  <tabstop>faultClearingTime_s</tabstop>
+  <tabstop>splitFactor</tabstop>
+  <tabstop>_k</tabstop>
+  <tabstop>beta</tabstop>
+  <tabstop>Qi</tabstop>
+  <tabstop>Qf</tabstop>
+  <tabstop>Earthing_Calculation</tabstop>
+  <tabstop>earthingConductorSize_mm2</tabstop>
   <tabstop>ViewportScale</tabstop>
   <tabstop>LayoutUnit</tabstop>
   <tabstop>ModelUnit</tabstop>
@@ -2600,40 +2758,6 @@ I = 10 / 0.4 / sqrt(3) / 0.9 / 0.8 = 20.047 A</string>
   <tabstop>ActualScale</tabstop>
   <tabstop>Explanation</tabstop>
   <tabstop>plainTextEdit</tabstop>
-  <tabstop>numberOfPhases</tabstop>
-  <tabstop>ratedVoltage</tabstop>
-  <tabstop>ratedPower</tabstop>
-  <tabstop>fullLoadEfficiency</tabstop>
-  <tabstop>powerFactor</tabstop>
-  <tabstop>shortCircuitImpedance</tabstop>
-  <tabstop>CBSpareMargin</tabstop>
-  <tabstop>ratedVoltageUnit</tabstop>
-  <tabstop>ratedPowerUnit</tabstop>
-  <tabstop>efficiencyUnit</tabstop>
-  <tabstop>powerFactorUnit</tabstop>
-  <tabstop>shortCircuitImpedanceUnit</tabstop>
-  <tabstop>CBSpareMarginUnit</tabstop>
-  <tabstop>Calculation_kVA</tabstop>
-  <tabstop>ratedApparentPower</tabstop>
-  <tabstop>ratedActivePower</tabstop>
-  <tabstop>ratedReactivePower</tabstop>
-  <tabstop>ratedCurrent_A</tabstop>
-  <tabstop>shortCircuitContribution</tabstop>
-  <tabstop>ratedApparentPowerUnit</tabstop>
-  <tabstop>ratedActivePowerUnit</tabstop>
-  <tabstop>ratedReactivePowerUnit</tabstop>
-  <tabstop>CBRating</tabstop>
-  <tabstop>CopyDown</tabstop>
-  <tabstop>copySizingFormula</tabstop>
-  <tabstop>earthFaultCurrent_kA</tabstop>
-  <tabstop>splitFactor</tabstop>
-  <tabstop>faultClearingTime_s</tabstop>
-  <tabstop>_k</tabstop>
-  <tabstop>beta</tabstop>
-  <tabstop>Qi</tabstop>
-  <tabstop>Qf</tabstop>
-  <tabstop>Earthing_Calculation</tabstop>
-  <tabstop>earthingConductorSize_mm2</tabstop>
   <tabstop>plainTextEdit_2</tabstop>
  </tabstops>
  <resources/>
