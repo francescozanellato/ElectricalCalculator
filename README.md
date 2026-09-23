@@ -28,7 +28,8 @@ ElectricalCalculator also calculates the CAD Viewport scale for Autocad or Intel
 
 Here is the main window, with calculation of the rated currents, short-circuit currents, circuit-breaker typical rated current and earthing conductor sizing:
 
-<img width="654" height="824" alt="IMG0002" src="https://github.com/user-attachments/assets/13b5ee14-c2ae-4f0f-b87a-23087f389503" />
+<img width="693" height="784" alt="tab2" src="https://github.com/user-attachments/assets/1ed1c4be-a898-41e8-a298-792234846345" />
+
 
 <br/>
 
@@ -36,7 +37,9 @@ Here is the main window, with calculation of the rated currents, short-circuit c
 
 Here is a useful Model/Layout/Paper Viewport Scale calculator for Autocad and Intellicad CAD software:
 
-<img width="654" height="824" alt="Viewport_Scale_calculator" src="https://github.com/user-attachments/assets/a83da20f-0e28-4824-ae5e-e0cb209ebf8f" />
+<img width="693" height="784" alt="tab1" src="https://github.com/user-attachments/assets/2307e77a-b08f-445e-b4cb-b02c5b295ba9" />
+
+
 
 
 Enjoy!
